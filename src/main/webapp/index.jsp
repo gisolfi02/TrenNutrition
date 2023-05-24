@@ -2,11 +2,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>JSP - Hello World</title>
+    <title>Tren Nutrition</title>
+    <link rel="icon" type="image/x-icon" href="img/favIcon.ico">
 </head>
 <body>
-<h1><%= "Ciao Mondo" %>
-</h1>
-<br/>
+
 </body>
 </html>
