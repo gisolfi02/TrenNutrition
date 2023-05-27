@@ -68,4 +68,23 @@ public class ProdottoDAO{
             throw new RuntimeException(e);
         }
     }
+
+    public Prodotto doRetriveById(int id){
+        try (Connection con = ConPool.getConnection()) {
+            PreparedStatement ps =
+                    con.prepareStatement("SELECT * FROM prodotto WHERE id=?");
+            ps.setInt(1,id);
+            ResultSet rs = ps.executeQuery();
+            Prodotto p = new Prodotto();
+            if(rs.next()) {
+                p.setId(rs.getInt(1));
+                p.setNome(rs.getString(2));
+                p.setDescrizione(rs.getString(3));
+                p.setPrezzo(rs.getDouble(4));
+            }
+            return p;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
