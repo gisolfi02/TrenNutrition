@@ -3,11 +3,11 @@ package model;
 import java.sql.*;
 
 public class UtenteDAO {
-    public Utente doRetrieveByUsernamePassword(String username, String password){
+    public Utente doRetrieveByEmailPassword(String email, String password){
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT id, username, passwordhash, email, nome, cognome, Tel, Via, Ncivico, CAP, admin FROM utente WHERE username = ? AND passwordhash =SHA1(?)");
-            ps.setString(1, username);
+                    con.prepareStatement("SELECT id, username, passwordhash, email, nome, cognome, Tel, Via, Ncivico, CAP, admin FROM utente WHERE email = ? AND passwordhash =SHA1(?)");
+            ps.setString(1, email);
             ps.setString(2, password);
             ResultSet rs = ps.executeQuery();
             if(rs.next()) {
