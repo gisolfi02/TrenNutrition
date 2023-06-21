@@ -44,7 +44,6 @@
     <input type="text" name="username" value="${modifica.username}"><br>
     <label><b>Telefono</b></label><br>
     <input type="number" name="telefono" value="${modifica.telefono}"><br>
-    <input >
     <input type="hidden" name="id" value="${modifica.id}">
     <input type="submit" value="Aggiorna">
   </form>
