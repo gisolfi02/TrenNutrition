@@ -1,4 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <!DOCTYPE html>
@@ -30,6 +31,14 @@
 
 <main>
     <!-- Il contenuto della pagina va qui -->
+    <!-- Carico tutti i prodotti dal server -->
+    <f:forEach items="${prodotti}" var="prodotto">
+        <div class = "prodotti">
+            <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
+            <p>${prodotto.prezzo}</p>
+            <button>Add to cart</button>
+        </div>
+    </f:forEach>
 </main>
 
 <footer>

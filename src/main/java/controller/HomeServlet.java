@@ -18,8 +18,8 @@ public class HomeServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         ProdottoDAO prodottoDAO = new ProdottoDAO();
         List<Prodotto> prodotti = prodottoDAO.doRetrieveAll();
-        request.setAttribute("Prodotti", prodotti);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+        request.setAttribute("prodotti", prodotti);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
         dispatcher.forward(request, response);
     }
-}
+} 
