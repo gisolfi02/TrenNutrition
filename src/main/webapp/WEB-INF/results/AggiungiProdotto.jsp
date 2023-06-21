@@ -2,35 +2,39 @@
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 
 <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <title>Tren Nutrition</title>
 </head>
 
 <body>
-<selection id="header">
+<section id="header">
+  <a href="#"><img src="/img/Logo.png" class="logo"></a>
   <div>
     <ul id="navbar">
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
       <li><a href="#">Chi siamo</a></li>
       <li><a href="#">Prodotti</a></li>
       <c:choose>
-        <c:when test="${!empty utente && utente.admin==true}">
-          <li><a href="#">Utenti</a></li> <%-- Se è un adimn aggiungo un altro elemento al menù per poter gestire gli utenti --%>
+        <c:when test="${!empty utente && utente.admin}">
+          <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/utenti">Utenti</a></li>
         </c:when>
         <c:otherwise>
-          <a href="#"><img src="img/shopping-cart-svgrepo-com.svg" class="logo" alt=""></a>
+          <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
         </c:otherwise>
       </c:choose>
+      <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
     </ul>
   </div>
-</selection>
+</section>
 
 <main>
-  <form method="post" action = "AddProdotto" enctype="multipart/form-data">
+  <form method="post" action = "SaveProdotto" enctype="multipart/form-data">
     <input type="file" name="file"><br>
     <label>Nome Prodotto: </label>
     <input type="text" name="nome"><br>

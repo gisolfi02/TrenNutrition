@@ -1,31 +1,35 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>Tren Nutrition</title>
 </head>
 
 <body>
-<selection id="header">
+<section id="header">
+    <a href="#"><img src="/img/Logo.png" class="logo"></a>
     <div>
         <ul id="navbar">
             <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
             <li><a href="#">Chi siamo</a></li>
             <li><a href="#">Prodotti</a></li>
-            <c:choose> <%-- Questo è un if else che serve per vedere se l'utente è l'admin perchè se lo è non serve avere il carrello --%>
-                <c:when test="${!empty utente && utente.admin==true}">
-                    <li><a href="#">Utenti</a></li> <%-- Se è un adimn aggiungo un altro elemento al menù per poter gestire gli utenti --%>
+            <c:choose>
+                <c:when test="${!empty utente && utente.admin}">
+                    <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/utenti">Utenti</a></li>
                 </c:when>
                 <c:otherwise>
-                    <a href="#"><img src="img/shopping-cart-svgrepo-com.svg" class="logo" alt=""></a>
+                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
                 </c:otherwise>
             </c:choose>
+            <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
         </ul>
     </div>
-</selection>
+</section>
 
 <main>
 
@@ -35,7 +39,7 @@
             <c:if test="${param.accesso == 0}">
                 <h3>Email o password errata</h3><br>
             </c:if>
-            <form action="Login" method="post">
+            <form action="Login" method="get">
                 <label><b>Email</b></label> <br>
                 <input type="email" name="email" id="email" required><br><br>
                 <label><b>Password</b></label><br>
@@ -57,7 +61,7 @@
                     </form>
                 </c:when>
                 <c:otherwise>
-                    <a href="AggiungiProdotto.jsp">Aggiungi Prodotto</a>
+                    <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/Add">Aggiungi Prodotto</a>
                     <form action="Login?esci=1" method="post">
                         <input type="submit" name="submit" value="Esci">
                     </form>
