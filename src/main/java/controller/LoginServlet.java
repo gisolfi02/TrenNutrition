@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(request.getParameter("esci")!=null && request.getParameter("esci").equals("1")){ //qui controllo se l'utente che ha già fatto l'accesso vuole uscire
             request.getSession().invalidate(); //tolgo l'utente dalla sessione, quindi faccio il logout
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/index.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("account.jsp");
             dispatcher.forward(request,response);
         }else {
             //prendo i parametri per il logni
@@ -37,11 +37,14 @@ public class LoginServlet extends HttpServlet {
                     request.getSession().setAttribute("carrello", carrello);
                 }
                 request.getSession().setAttribute("utente", utente); //aggiungo l'utente alla sessione
-                RequestDispatcher dispatcher = request.getRequestDispatcher("/index.html");
+                RequestDispatcher dispatcher = request.getRequestDispatcher("index.html");
                 dispatcher.forward(request,response);
             }else {
                 response.sendRedirect("http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp?accesso=0");
             }
         }
+    }
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doGet(request,response);
     }
 }
