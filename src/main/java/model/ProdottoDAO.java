@@ -1,9 +1,6 @@
 package model;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.*;
 public class ProdottoDAO{
     public List<Prodotto> doRetrieveAll(){
@@ -83,6 +80,26 @@ public class ProdottoDAO{
                 p.setPrezzo(rs.getDouble(4));
             }
             return p;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void doSave(Prodotto p, int categoria){
+        try (Connection con = ConPool.getConnection()) {
+            PreparedStatement ps =
+                    con.prepareStatement("INSERT INTO prodotto(nome,descrizione,prezzo,idCategoria) VALUES (?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, p.getNome());
+            ps.setString(2, p.getDescrizione());
+            ps.setDouble(3, p.getPrezzo());
+            ps.setInt(4, categoria);
+            if (ps.executeUpdate() != 1) {
+                throw new RuntimeException("INSERT error.");
+            }
+            ResultSet rs = ps.getGeneratedKeys();
+            rs.next();
+            int id = rs.getInt(1);
+            p.setId(id);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

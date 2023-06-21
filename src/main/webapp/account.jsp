@@ -28,9 +28,13 @@
 </selection>
 
 <main>
+
     <c:choose> <%-- Questo if invece serve per vedere se l'utente ha fatto l'accesso. Se ha fatto l'accesso non mostro più form--%>
         <c:when test="${empty utente || utente == null}">
             <h1>ACCEDI</h1><br>
+            <c:if test="${param.accesso == 0}">
+                <h3>Email o password errata</h3><br>
+            </c:if>
             <form action="Login" method="post">
                 <label><b>Email</b></label> <br>
                 <input type="email" name="email" id="email" required><br><br>
@@ -41,16 +45,24 @@
             </form>
         </c:when>
         <c:otherwise>
-            <c:if test="${utente.admin != true}"> <%--Se l'utente che ha fatto l'accesso non è l'admin aggiungo i link per vedere gli ordini e i dati personali --%>
-                <h1> Bentornato ${utente.nome}, questa &egrave; la tua pagina riservata</h1>
-                <ul>
-                    <li><a href="#">I tuoi ordini</a></li>
-                    <li><a href="#">Le tue informazioni personali</a></li>
-                </ul>
-            </c:if>
-                <form action="Login?esci=1" method="post">
-                    <input type="submit" name="submit" value="Esci">
-                </form>
+            <c:choose>
+                <c:when test="${utente.admin != true}"> <%--Se l'utente che ha fatto l'accesso non è l'admin aggiungo i link per vedere gli ordini e i dati personali --%>
+                    <h1> Bentornato ${utente.nome}, questa e' la tua pagina riservata</h1>
+                    <ul>
+                        <li><a href="#">I tuoi ordini</a></li>
+                        <li><a href="#">Le tue informazioni personali</a></li>
+                    </ul>
+                    <form action="Login?esci=1" method="post">
+                        <input type="submit" name="submit" value="Esci">
+                    </form>
+                </c:when>
+                <c:otherwise>
+                    <a href="AggiungiProdotto.jsp">Aggiungi Prodotto</a>
+                    <form action="Login?esci=1" method="post">
+                        <input type="submit" name="submit" value="Esci">
+                    </form>
+                </c:otherwise>
+            </c:choose>
         </c:otherwise>
     </c:choose>
 </main>
