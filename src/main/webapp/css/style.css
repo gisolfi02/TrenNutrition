@@ -64,6 +64,11 @@ body {
     align-items: center;
     padding: 10px 15px;
     background: #F2E7D5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
 }
 
 #navbar {
@@ -73,7 +78,6 @@ body {
     padding-top: 30px;
     margin-bottom: 20px;
     text-align: center;
-    /* Aggiungi questa riga */
 }
 
 #navbar li {
@@ -87,7 +91,6 @@ body {
 #navbar li:nth-child(2),
 #navbar li:nth-child(3) {
     display: inline-flex;
-    /* Cambia "flex" in "inline-flex" */
     justify-content: center;
     align-items: center;
 }
@@ -108,4 +111,9 @@ body {
 #header .car {
     height: 40px;
     width: auto;
+}
+
+main {
+    padding-top: 80px;
+    /* Aggiungi un margine superiore per evitare sovrapposizione con l'header */
 }
