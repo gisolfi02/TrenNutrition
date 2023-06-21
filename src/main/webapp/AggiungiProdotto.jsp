@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<selection id="header">
+<section id="header">
   <a href="#"><img src="/img/Logo.png" class="logo"></a>
   <div>
     <ul id="navbar">
@@ -21,20 +21,20 @@
       <li><a href="#">Chi siamo</a></li>
       <li><a href="#">Prodotti</a></li>
       <c:choose>
-        <c:when test="${!empty utente && utente.admin==true}">
-          <li><a href="#">Utenti</a></li> <%-- Se è un adimn aggiungo un altro elemento al menù per poter gestire gli utenti --%>
+        <c:when test="${!empty utente && utente.admin}">
+          <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/utenti">Utenti</a></li>
         </c:when>
         <c:otherwise>
           <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
         </c:otherwise>
       </c:choose>
-      <li><a href="#"><i class="far fa-user"></i></a></li>
+      <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
     </ul>
   </div>
-</selection>
+</section>
 
 <main>
-  <form method="post" action = "AddProdotto" enctype="multipart/form-data">
+  <form method="post" action = "SaveProdotto" enctype="multipart/form-data">
     <input type="file" name="file"><br>
     <label>Nome Prodotto: </label>
     <input type="text" name="nome"><br>
