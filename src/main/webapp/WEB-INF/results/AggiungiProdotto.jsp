@@ -38,8 +38,8 @@
     <input type="file" name="file"><br>
     <label>Nome Prodotto: </label>
     <input type="text" name="nome"><br>
-    <label>Descrizione: </label>
-    <input type="text" name="descrizione"><br>
+    <label>Descrizione: </label><br>
+    <textarea cols="40" rows="10" name="descrizione"></textarea><br>
     <label>Prezzo: </label>
     <input type="text" name="prezzo"><br>
     <label>Categoria: </label>
