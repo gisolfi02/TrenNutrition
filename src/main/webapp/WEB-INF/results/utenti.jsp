@@ -14,24 +14,29 @@
   </head>
 
   <body>
-    <selection id="header">
-      <div>
-        <ul id="navbar">
-          <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
-          <li><a href="#">Chi siamo</a></li>
-          <li><a href="#">Prodotti</a></li>
-          <c:choose>
-            <c:when test="${!empty utente && utente.admin==true}">
-              <li><a href="utenti">Utenti</a></li> <%-- Se è un adimn aggiungo un altro elemento al menù per poter gestire gli utenti --%>
-            </c:when>
-            <c:otherwise>
-              <a href="#"><img src="img/shopping-cart-svgrepo-com.svg" class="logo" alt=""></a>
-            </c:otherwise>
-          </c:choose>
-          <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
-        </ul>
-      </div>
-    </selection>
+  <section id="header">
+    <a href="#"><img src="/img/Logo.png" class="logo"></a>
+    <div class="search-bar">
+      <input type="text" placeholder="Cerca...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
+    <div>
+      <ul id="navbar">
+        <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
+        <li><a href="#">Chi siamo</a></li>
+        <li><a href="#">Prodotti</a></li>
+        <c:choose>
+          <c:when test="${!empty utente && utente.admin}">
+            <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/utenti">Utenti</a></li>
+          </c:when>
+          <c:otherwise>
+            <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/carrello"><i class="fas fa-shopping-cart"></i></a></li>
+          </c:otherwise>
+        </c:choose>
+        <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
+      </ul>
+    </div>
+  </section>
 
     <main>
       <!-- Il contenuto della pagina va qui -->

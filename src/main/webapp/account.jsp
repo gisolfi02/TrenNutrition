@@ -36,6 +36,7 @@
 </section>
 
 
+
 <main>
 
     <c:choose> <%-- Questo if invece serve per vedere se l'utente ha fatto l'accesso. Se ha fatto l'accesso non mostro più form--%>
