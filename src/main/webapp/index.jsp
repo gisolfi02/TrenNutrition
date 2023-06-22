@@ -25,7 +25,7 @@
                     <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/utenti">Utenti</a></li>
                 </c:when>
                 <c:otherwise>
-                    <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/carrello"><i class="fas fa-shopping-cart"></i></a></li>
                 </c:otherwise>
             </c:choose>
             <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
@@ -38,11 +38,13 @@
     <!-- Carico tutti i prodotti dal server -->
     <div class="prodotti">
     <c:forEach items="${prodotti}" var="prodotto">
-        <div class="prodotto">
-            <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
-            <h3>${prodotto.nome}</h3>
-            <p>${prodotto.prezzo}€</p>
-        </div>
+        <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
+            <div class="prodotto">
+                <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
+                <h3 style="color: black">${prodotto.nome}</h3>
+                <p style="color: #393E46">${prodotto.prezzo}€</p>
+            </div>
+        </a>
     </c:forEach>
     </div>
 </main>

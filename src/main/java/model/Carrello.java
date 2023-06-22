@@ -1,18 +1,28 @@
 package model;
 
-import java.util.HashMap;
+
 import java.util.List;
 
 public class Carrello {
     private int idCarrello;
-    private HashMap<Integer,Integer> prodotti;
 
-    public HashMap<Integer, Integer> getProdotti() {
+    private List<Integer> prodotti;
+    private List<Integer> quantita;
+
+    public List<Integer> getProdotti() {
         return prodotti;
     }
 
-    public void setProdotti(HashMap<Integer, Integer> prodotti) {
+    public void setProdotti(List<Integer> prodotti) {
         this.prodotti = prodotti;
+    }
+
+    public List<Integer> getQuantita() {
+        return quantita;
+    }
+
+    public void setQuantita(List<Integer> quantita) {
+        this.quantita = quantita;
     }
 
     public int getIdCarrello() {

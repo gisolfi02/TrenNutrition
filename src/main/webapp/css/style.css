@@ -114,6 +114,13 @@ body {
 }
 
 main {
-    padding-top: 80px;
-    /* Aggiungi un margine superiore per evitare sovrapposizione con l'header */
+    margin-top: 110px;
+    /* Aggiungi un margine superiore per evitare sovrapposizione con l'header */
+}
+
+.prodotti {
+    display: flex;
+}
+.prodotto {
+    margin: 10px    ;
 }
