@@ -4,13 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
           integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>Tren Nutrition</title>
-</head>
 
+</head>
 <body>
 <section id="header">
     <a href="#"><img src="/img/Logo.png" class="logo"></a>
@@ -35,13 +36,15 @@
 <main>
     <!-- Il contenuto della pagina va qui -->
     <!-- Carico tutti i prodotti dal server -->
+    <div class="prodotti">
     <c:forEach items="${prodotti}" var="prodotto">
-        <div class="prodotti">
+        <div class="prodotto">
             <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
-            <p>${prodotto.prezzo}</p>
-            <button>Add to cart</button>
+            <h3>${prodotto.nome}</h3>
+            <p>${prodotto.prezzo}€</p>
         </div>
     </c:forEach>
+    </div>
 </main>
 
 <footer>

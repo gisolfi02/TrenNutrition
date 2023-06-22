@@ -1,5 +1,6 @@
 package controller;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -48,6 +49,9 @@ public class SalvaProdottoServlet extends HttpServlet {
         Path pathDestinazione = Paths.get(getServletContext().getRealPath("img"+File.separator + fileName+".jpg"));
         InputStream fileInputStream = filePart.getInputStream();
         Files.copy(fileInputStream,pathDestinazione);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("index.html");
+        dispatcher.forward(request,response);
     }
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
