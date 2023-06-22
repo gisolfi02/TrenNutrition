@@ -14,6 +14,10 @@
 <body>
 <section id="header">
     <a href="#"><img src="/img/Logo.png" class="logo"></a>
+    <div class="search-bar">
+        <input type="text" placeholder="Cerca...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
     <div>
         <ul id="navbar">
             <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
