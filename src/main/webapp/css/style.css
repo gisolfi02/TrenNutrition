@@ -142,6 +142,13 @@ body {
 }
 
 main {
-    margin-top: 130px;
-    /* Aggiungi un margine superiore per evitare sovrapposizione con l'header */
+    margin-top: 110px;
+    /* Aggiungi un margine superiore per evitare sovrapposizione con l'header */
+}
+
+.prodotti {
+    display: flex;
+}
+.prodotto {
+    margin: 10px    ;
 }
