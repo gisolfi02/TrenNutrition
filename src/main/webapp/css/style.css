@@ -160,18 +160,19 @@ body {
     position: relative;
     width: 400px;
     height: 450px;
-    background: transparent;
-    border: 2px solid rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    backdrop-filter: blur();
+    backdrop-filter: blur(5px);
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
 }
 
 .form-box h1{
     font-size: 2em;
-    color: #ffffff;
+    color: #393E46;
     text-align: center;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
@@ -180,23 +181,14 @@ body {
     position: relative;
     margin: 30px 0;
     width: 310px;
-    border-bottom: 2px solid #ffffff;
+    border-bottom: 2px solid #393E46;
 }
 
 .input-box label{
-    position: absolute;
-    top: 50%;
-    left: 5px;
-    transform: translateY(-50%);
-    color: #ffffff;
+    display: block;
+    color: #393E46;
     font-size: 1em;
-    pointer-events: none;
-    transition: .5s;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-input:focus ~ label,
-input:valid ~ label{
-    top: -5px;
 }
 
 .input-box input{
@@ -207,14 +199,14 @@ input:valid ~ label{
     outline: none;
     font-size: 1em;
     padding: 0 35px 0 5px;
-    color: #ffffff;
+    color: #393E46;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .input-box i{
     position: absolute;
     right: 8px;
-    color: #ffffff;
+    color: #393E46;
     font-size: 1.2em;
     top: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
@@ -232,22 +224,31 @@ button{
     font-weight: 600;
 }
 
+button:hover{
+    background: #6D9886;
+}
+
 .register{
     font-size: .9em;
     color: #ffffff;
     text-align: center;
     margin: 25px 0 10px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.register p{
+    text-decoration: none;
+    color: #6D9886;
+    font-weight: 600;
 }
 
 .register p a{
     text-decoration: none;
-    color: #ffffff;
+    color: #393E46;
     font-weight: 600;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .register p a:hover{
+    color: #6D9886;
     text-decoration: underline;
 }
 
