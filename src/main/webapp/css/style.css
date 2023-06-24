@@ -1,11 +1,10 @@
 /* Import del font di Google "Spartan" perché mi piace come Font */
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Spartan", sans-serif;
+    font-family: 'poppins',sans-serif;
 }
 
 h1 {
@@ -141,10 +140,117 @@ body {
     background-color: #6D9886;
 }
 
-main {
-    margin-top: 110px;
-    /* Aggiungi un margine superiore per evitare sovrapposizione con l'header */
+
+
+/*  QUESTA PARTE DEL CSS E SOLO PER IL LOG-IN  */
+.section-logIn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: white;
+
+    background: url("https://hips.hearstapps.com/hmg-prod/images/gettyimages-1281166499.jpg");
+    background-position: unset;
+    background-size: cover;
 }
+
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    backdrop-filter: blur();
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-box h1{
+    font-size: 2em;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.input-box{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #ffffff;
+}
+
+.input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .5s;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+input:focus ~ label,
+input:valid ~ label{
+    top: -5px;
+}
+
+.input-box input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.input-box i{
+    position: absolute;
+    right: 8px;
+    color: #ffffff;
+    font-size: 1.2em;
+    top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #ffffff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.register{
+    font-size: .9em;
+    color: #ffffff;
+    text-align: center;
+    margin: 25px 0 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.register p a{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.register p a:hover{
+    text-decoration: underline;
+}
+
 
 .prodotti {
     display: flex;
