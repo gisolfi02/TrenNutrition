@@ -14,7 +14,7 @@
 </head>
 <body>
 <section id="header">
-    <a href="#"><img src="/img/Logo.png" class="logo"></a>
+    <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
     <div class="search-bar">
         <input type="text" placeholder="Cerca...">
         <button type="submit"><i class="fas fa-search"></i></button>
