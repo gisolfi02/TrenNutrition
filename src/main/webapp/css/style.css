@@ -212,19 +212,17 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-button{
+button {
     width: 100%;
     height: 40px;
-    border-radius: 40px;
-    background: #ffffff;
-    border: none;
-    outline: none;
+    border: 3px solid #6D9886;
     cursor: pointer;
     font-size: 1em;
     font-weight: 600;
+    border-radius: 20px;
 }
 
-button:hover{
+button:hover {
     background: #6D9886;
 }
 
@@ -251,6 +249,72 @@ button:hover{
     color: #6D9886;
     text-decoration: underline;
 }
+
+/*          AREA RISERVATA UTENTE NORMALE        */
+
+.section-user {
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+.form-box-user {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.form-box-user b {
+    color: #6D9886;
+    font-size: 27px;
+}
+
+.form-box-user h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.form-box-user ul {
+    color: #6D9886;
+    list-style: square inside;
+    padding: 0;
+    margin: 0;
+}
+
+.form-box-user ul li {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.form-box-user ul li a {
+    text-decoration: none;
+    color: #393E46;
+    font-weight: bold;
+}
+
+.form-box-user ul li a:hover {
+    color: #6D9886;
+}
+
+.form-box-user button {
+    width: 50%;
+    background: #6D9886;
+    border: 3px solid #6D9886;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+}
+
+.form-box-user button:hover {
+    background: #f2f2f2;
+}
+
+
+
 
 
 .prodotti {
