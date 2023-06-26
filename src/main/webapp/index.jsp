@@ -35,6 +35,9 @@
                 </c:otherwise>
             </c:choose>
             <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
+            <c:if test="${!empty utente}">
+            <li><h5>Ciao, ${utente.nome}</h5></li>
+            </c:if>
         </ul>
     </div>
 </section>

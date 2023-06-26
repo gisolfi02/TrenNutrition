@@ -13,11 +13,13 @@
 
 </head>
 <body>
-<<section id="header">
+<section id="header">
   <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
   <div class="search-bar">
-    <input type="text" placeholder="Cerca...">
-    <button type="submit"><i class="fas fa-search"></i></button>
+    <form method="post" action="ricerca">
+      <input type="text" name="ricerca" placeholder="Cerca...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
   </div>
   <div>
     <ul id="navbar">
@@ -34,39 +36,52 @@
       </c:choose>
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
       <c:if test="${!empty utente}">
-      <li><h5>Ciao, ${utente.nome}</h5></li>
+        <li><h5>Ciao, ${utente.nome}</h5></li>
       </c:if>
     </ul>
   </div>
 </section>
 
-
-
 <main>
-  <!-- Il contenuto della pagina va qui -->
-  <img src="img/${prodotto.nome}${prodotto.id}.jpg" style="float: left">
-  <h1>${prodotto.nome}</h1><br>
-  <h5>${prodotto.descrizione}</h5><br>
-  <form action="Aggiungi" method="post">
-    <input type="hidden" name="id" value="${prodotto.id}">
-    <label>${prodotto.prezzo}€</label><br>
-    <label>Quantità:</label>
-    <select name="quantita">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-    <input type="submit" value="Aggiungi al carrello">
+  <!--ci sono i br, levali--->
+  <form method="post" onsubmit="return validateCard()" action="ordine">
+    <fieldset>
+      <legend>Spedizione</legend>
+      <label>Via: </label>
+      <input type="text" value="${utente.via}" required><br>
+      <label>N. Civico: </label>
+      <input type="text" value="${utente.ncivico}" required><br>
+      <label>CAP: </label>
+      <input type="text" value="${utente.CAP}" required><br>
+    </fieldset>
+    <fieldset>
+      <legend>Pagamento</legend>
+      <label>Numero Carta: </label>
+      <i class="far fa-credit-card"></i>
+      <input type="text" placeholder="0000 0000 0000 0000" id="card" required><br>
+      <label>Nome sulla carta: </label>
+      <input type="text">
+      <label>Scadenza: </label>
+      <input type="text" placeholder="00/00">
+      <label>CVC: </label>
+      <input type="text" placeholder="123">
+    </fieldset><br>
+    <label> Totale: ${totale}€</label>
+    <input type="hidden" name = "totale" value="${totale}">
+    <input type="submit" value="Conferma Ordine">
   </form>
-  <c:if test="${richiesta == 0}">
-    <p style="color:red;">Per aggiungere il prodotto al carrello <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp">accedi</a> o <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html">registrati</a></p>
-  </c:if>
-  <c:if test="${aggiunta == 1}">
-    <p style="color:green">Prodotto aggiunto al carrello</p>
-  </c:if>
+
+  <script type="text/javascript">
+    function validateCard(){
+      let card = document.getElementById("card").value
+      let pattern = /(\d{4}[-\s]?){3}\d{4}/
+      if(!pattern.test(card)){
+        alert("Inserire una carta valida")
+        return false
+      }
+      return true
+    }
+  </script>
 </main>
 
 <footer>

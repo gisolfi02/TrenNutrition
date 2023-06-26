@@ -31,6 +31,9 @@
                 </c:otherwise>
             </c:choose>
             <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
+            <c:if test="${!empty utente}">
+            <li><h5>Ciao, ${utente.nome}</h5></li>
+            </c:if>
         </ul>
     </div>
 </section>
@@ -58,7 +61,7 @@
                                 <label>Password</label>
                                 <input type="password" name="password" id="password" required>
                             </div>
-                            <button type="submit" name="submit" value="Accedi">Accedi</button>
+                            <button type="submit" name="submit" value="Accedi" class="login-button">Accedi</button>
                             <div class="register">
                                 <p>Non hai un account?<a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html"> Registrati</a> </p>
                             </div>
@@ -74,7 +77,7 @@
                         <div class="form-box-user">
                             <h2> Bentornato <b>${utente.nome}</b>, questa &egrave la tua pagina riservata</h2>
                             <ul>
-                                <li><a href="#">I tuoi ordini</a></li>
+                                <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/ordini">I tuoi ordini</a></li>
                                 <li><a href="#">Le tue informazioni personali</a></li>
                             </ul>
                             <form action="Login?esci=1" method="post">
