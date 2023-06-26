@@ -426,7 +426,10 @@ main{
 }
 .prodotti {
     display: flex;
+    flex-wrap: wrap;
 }
 .prodotto {
-    margin: 10px    ;
+    margin: 10px;
+    width: 25%;
+    height: auto;
 }
