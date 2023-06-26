@@ -7,6 +7,27 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <title>Tren Nutrition</title>
+  <script type="text/javascript">
+    function validateForm() {
+      let email = document.getElementById("email").value;
+      let password = document.getElementById("password").value;
+      let emailPattern = /^([a-z0-9_\.-]+@[a-z\d\.-]+\.[a-z\.]{2,6})$/;
+      let passwordPattern = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
+
+      if (!emailPattern.test(email)) {
+        alert("Email non valida");
+        return false;
+      }
+
+      if (!passwordPattern.test(password)) {
+        alert("La password deve contenere almeno 1 numero, 1 carattere maiuscolo, 1 minuscolo, 1 carattere non alfanumerico e non deve contenere spazi");
+        return false;
+      }
+
+      return true;
+    }
+  </script>
+
 </head>
 
 <body>
@@ -21,7 +42,7 @@
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
       <li><a href="#">Chi siamo</a></li>
       <li><a href="#">Prodotti</a></li>
-      <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+      <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/carrello"><i class="fas fa-shopping-cart"></i></a></li>
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
     </ul>
   </div>
@@ -76,6 +97,7 @@
     </div>
   </section>
 </main>
+
 
 <footer>
   <!-- Il piè di pagina va qui -->
