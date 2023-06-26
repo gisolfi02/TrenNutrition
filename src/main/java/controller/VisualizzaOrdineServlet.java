@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(value="/visualizzaordine")
-public class VisualizzaOrdine extends HttpServlet {
+public class VisualizzaOrdineServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int numOrdine = Integer.parseInt(request.getParameter("num"));
         OrdineDAO ordineDAO = new OrdineDAO();

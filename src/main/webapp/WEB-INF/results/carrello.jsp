@@ -59,7 +59,7 @@
     List<Integer> quantita = carrello.getQuantita();
     if(prodotti != null){
       if(prodotti.isEmpty()){%>
-      <h3>Il carrello e' vuoto, prova ad aggiungere qualcosa</h3>
+      <h3>Il carrello &egrave vuoto, prova ad aggiungere qualcosa</h3>
     <%}else{
       Double totale = 0D;
       int i = 0;
@@ -88,7 +88,7 @@
       </form>
     <%}
     }else {%>
-      <h3>Il carrello e' vuoto, prova ad aggiungere qualcosa</h3
+      <h3>Il carrello &egrave vuoto, prova ad aggiungere qualcosa</h3
         <%}
   }%>
 </main>
