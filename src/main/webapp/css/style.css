@@ -421,13 +421,9 @@ button:hover {
     color: #6D9886;
     text-decoration: underline;
 }
-
-
-
-
-
-
-
+main{
+    margin-top: 120px;
+}
 .prodotti {
     display: flex;
 }
