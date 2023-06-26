@@ -12,7 +12,7 @@
 
 <body>
 <section id="header">
-    <a href="#"><img src="/img/Logo.png" class="logo"></a>
+    <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
     <div class="search-bar">
         <input type="text" placeholder="Cerca...">
         <button type="submit"><i class="fas fa-search"></i></button>
@@ -40,31 +40,48 @@
 <main>
 
     <c:choose> <%-- Questo if invece serve per vedere se l'utente ha fatto l'accesso. Se ha fatto l'accesso non mostro più form--%>
-        <c:when test="${empty utente || utente == null}">
-            <h1>ACCEDI</h1><br>
-            <c:if test="${param.accesso == 0}">
-                <h3>Email o password errata</h3><br>
-            </c:if>
-            <form action="Login" method="get">
-                <label><b>Email</b></label> <br>
-                <input type="email" name="email" id="email" required><br><br>
-                <label><b>Password</b></label><br>
-                <input type="password" name="password" id="password" required><br><br>
-                <input type="submit" name="submit" value="Accedi">
-                <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html" style="text-decoration: none">Crea un account</a>
-            </form>
-        </c:when>
+            <c:when test="${empty utente || utente == null}">
+                <c:if test="${param.accesso == 0}">
+                    <script>alert("Email o Password errati!")</script>
+                </c:if>
+                <section class="section-logIn">
+                    <div class="form-box">
+                        <form action="Login" method="get">
+                            <h1>ACCEDI</h1>
+                            <div class="input-box">
+                                <i class="fa-solid fa-envelope"></i>
+                                <label>Email</label>
+                                <input type="email" name="email" id="email" required>
+                            </div>
+                            <div class="input-box">
+                                <i class="fa-solid fa-lock"></i>
+                                <label>Password</label>
+                                <input type="password" name="password" id="password" required>
+                            </div>
+                            <button type="submit" name="submit" value="Accedi">Accedi</button>
+                            <div class="register">
+                                <p>Non hai un account?<a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html"> Registrati</a> </p>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </c:when>
+
         <c:otherwise>
             <c:choose>
                 <c:when test="${utente.admin != true}"> <%--Se l'utente che ha fatto l'accesso non è l'admin aggiungo i link per vedere gli ordini e i dati personali --%>
-                    <h1> Bentornato ${utente.nome}, questa e' la tua pagina riservata</h1>
-                    <ul>
-                        <li><a href="#">I tuoi ordini</a></li>
-                        <li><a href="#">Le tue informazioni personali</a></li>
-                    </ul>
-                    <form action="Login?esci=1" method="post">
-                        <input type="submit" name="submit" value="Esci">
-                    </form>
+                   <section class="section-user">
+                        <div class="form-box-user">
+                            <h2> Bentornato <b>${utente.nome}</b>, questa &egrave la tua pagina riservata</h2>
+                            <ul>
+                                <li><a href="#">I tuoi ordini</a></li>
+                                <li><a href="#">Le tue informazioni personali</a></li>
+                            </ul>
+                            <form action="Login?esci=1" method="post">
+                                <button type="submit" name="submit" value="Esci">Esci</button>
+                            </form>
+                       </div>
+                   </section>
                 </c:when>
                 <c:otherwise>
                     <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/Add">Aggiungi Prodotto</a>

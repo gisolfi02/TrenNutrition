@@ -32,7 +32,7 @@
 
 <body>
 <section id="header">
-  <a href="#"><img src="/img/Logo.png" class="logo"></a>
+  <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
   <div class="search-bar">
     <input type="text" placeholder="Cerca...">
     <button type="submit"><i class="fas fa-search"></i></button>
@@ -49,31 +49,53 @@
 </section>
 
 <main>
-  <h1>CREA UN ACCOUNT</h1>
-  <form action="Registrazione"  onsubmit="return validateForm();" method="post">
-    <label><b>Nome</b></label><br>
-    <input type="text" name="nome" required><br>
-    <label><b>Cognome</b></label><br>
-    <input type="text" name="cognome" required><br>
-    <label><b>Username</b></label><br>
-    <input type="text" name="username" required><br>
-    <label><b>Email</b></label><br>
-    <input type="email" name="email" id="email" required><br>
-    <label><b>Password</b></label><br>
-    <input type="password" name="password" id="password" required><br>
-    <label><b>Telefono</b></label><br>
-    <input type="number" name="telefono" required><br>
-    <fieldset>
-      <legend><b>Indirizzo</b></legend>
-      <label><b>Via</b></label><br>
-      <input type="text" name="via"><br>
-      <label><b>N. Civico</b></label><br>
-      <input type="number" name="civico"><br>
-      <label><b>CAP</b></label><br>
-      <input type="text" name="cap"><br>
-    </fieldset><br>
-    <input type="submit" value="Registrati">
-  </form>
+  <section class="section-logIn">
+    <div class="form-box">
+      <form action="Registrazione" method="post">
+        <h1>CREA UN ACCOUNT</h1>
+        <div class="input-box">
+          <label><b>Nome</b></label><br>
+          <input type="text" name="nome"><br>
+        </div>
+        <div class="input-box">
+          <label><b>Cognome</b></label><br>
+          <input type="text" name="cognome"><br>
+        </div>
+        <div class="input-box">
+          <label><b>Username</b></label><br>
+          <input type="text" name="username"><br>
+        </div>
+        <div class="input-box">
+          <label><b>Email</b></label><br>
+          <input type="email" name="email"><br>
+        </div>
+        <div class="input-box">
+          <label><b>Password</b></label><br>
+          <input type="password" name="password"><br>
+        </div>
+        <div class="input-box">
+          <label><b>Telefono</b></label><br>
+          <input type="number" name="telefono"><br>
+        </div>
+        <fieldset>
+          <div class="input-box">
+            <legend><b>Indirizzo</b></legend>
+            <label><b>Via</b></label>
+            <input type="text" name="via">
+          </div>
+          <div class="input-box">
+            <label><b>N. Civico</b></label>
+            <input type="number" name="civico">
+          </div>
+          <div class="input-box">
+            <label><b>CAP</b></label>
+            <input type="text" name="cap">
+          </div>
+        </fieldset>
+        <button type="submit" value="Registrati">Registrati</button>
+      </form>
+    </div>
+  </section>
 </main>
 
 

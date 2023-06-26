@@ -1,11 +1,10 @@
 /* Import del font di Google "Spartan" perché mi piace come Font */
-@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Spartan", sans-serif;
+    font-family: 'poppins',sans-serif;
 }
 
 h1 {
@@ -141,10 +140,182 @@ body {
     background-color: #6D9886;
 }
 
-main {
-    margin-top: 110px;
-    /* Aggiungi un margine superiore per evitare sovrapposizione con l'header */
+
+
+/*  QUESTA PARTE DEL CSS E SOLO PER IL LOG-IN  */
+.section-logIn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: white;
+
+    background: url("https://hips.hearstapps.com/hmg-prod/images/gettyimages-1281166499.jpg");
+    background-position: unset;
+    background-size: cover;
 }
+
+.form-box{
+    position: relative;
+    width: 400px;
+    height: 450px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-box h1{
+    font-size: 2em;
+    color: #393E46;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.input-box{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #393E46;
+}
+
+.input-box label{
+    display: block;
+    color: #393E46;
+    font-size: 1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.input-box input{
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #393E46;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.input-box i{
+    position: absolute;
+    right: 8px;
+    color: #393E46;
+    font-size: 1.2em;
+    top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border: 3px solid #6D9886;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+button:hover {
+    background: #6D9886;
+}
+
+.register{
+    font-size: .9em;
+    color: #ffffff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p{
+    text-decoration: none;
+    color: #6D9886;
+    font-weight: 600;
+}
+
+.register p a{
+    text-decoration: none;
+    color: #393E46;
+    font-weight: 600;
+}
+
+.register p a:hover{
+    color: #6D9886;
+    text-decoration: underline;
+}
+
+/*          AREA RISERVATA UTENTE NORMALE        */
+
+.section-user {
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+.form-box-user {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.form-box-user b {
+    color: #6D9886;
+    font-size: 27px;
+}
+
+.form-box-user h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.form-box-user ul {
+    color: #6D9886;
+    list-style: square inside;
+    padding: 0;
+    margin: 0;
+}
+
+.form-box-user ul li {
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-decoration: underline;
+}
+
+.form-box-user ul li a {
+    text-decoration: none;
+    color: #393E46;
+    font-weight: bold;
+}
+
+.form-box-user ul li a:hover {
+    color: #6D9886;
+}
+
+.form-box-user button {
+    width: 50%;
+    background: #6D9886;
+    border: 3px solid #6D9886;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+}
+
+.form-box-user button:hover {
+    background: #f2f2f2;
+}
+
+
+
+
 
 .prodotti {
     display: flex;
