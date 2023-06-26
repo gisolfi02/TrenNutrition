@@ -104,4 +104,26 @@ public class ProdottoDAO{
             throw new RuntimeException(e);
         }
     }
+
+    public List<Prodotto> doRetriveByRicerca(String ricerca){
+        try (Connection con = ConPool.getConnection()) {
+            PreparedStatement ps =
+                    con.prepareStatement("SELECT DISTINCT p.id, p.nome, p.descrizione, p.prezzo FROM prodotto p, categoria c WHERE p.nome LIKE ? or c.nome LIKE ? and p.idCategoria = c.id");
+            ps.setString(1,ricerca);
+            ps.setString(2,ricerca);
+            ResultSet rs = ps.executeQuery();
+            List<Prodotto> prodotti = new ArrayList<>();
+            while (rs.next()) {
+                Prodotto p = new Prodotto();
+                p.setId(rs.getInt(1));
+                p.setNome(rs.getString(2));
+                p.setDescrizione(rs.getString(3));
+                p.setPrezzo(rs.getDouble(4));
+                prodotti.add(p);
+            }
+            return prodotti;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

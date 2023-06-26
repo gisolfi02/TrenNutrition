@@ -16,8 +16,10 @@
 <section id="header">
     <a href="#"><img src="/img/Logo.png" class="logo"></a>
     <div class="search-bar">
-        <input type="text" placeholder="Cerca...">
-        <button type="submit"><i class="fas fa-search"></i></button>
+        <form method="post" action="ricerca">
+            <input type="text" name="ricerca" placeholder="Cerca...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
     </div>
     <div>
         <ul id="navbar">
