@@ -181,7 +181,6 @@ body {
     position: relative;
     margin: 30px 0;
     width: 310px;
-    border-bottom: 2px solid #393E46;
 }
 
 .input-box label{
@@ -192,7 +191,7 @@ body {
 }
 
 .input-box input{
-    width: 100%;
+    width: 85%;
     height: 50px;
     background: transparent;
     border: none;
@@ -201,6 +200,11 @@ body {
     padding: 0 35px 0 5px;
     color: #393E46;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #393E46;
+}
+
+.input-box input:focus {
+    border-bottom-color: #6D9886;
 }
 
 .input-box i{
@@ -216,6 +220,7 @@ button {
     width: 100%;
     height: 40px;
     border: 3px solid #6D9886;
+    background: #6D9886;
     cursor: pointer;
     font-size: 1em;
     font-weight: 600;
@@ -223,7 +228,7 @@ button {
 }
 
 button:hover {
-    background: #6D9886;
+    background: #f2f2f2;
 }
 
 .register{
@@ -250,6 +255,8 @@ button:hover {
     text-decoration: underline;
 }
 
+
+
 /*          AREA RISERVATA UTENTE NORMALE        */
 
 .section-user {
@@ -259,7 +266,6 @@ button:hover {
     min-height: 100vh;
     width: 100%;
 }
-
 
 .form-box-user {
     max-width: 750px;
@@ -312,6 +318,111 @@ button:hover {
 .form-box-user button:hover {
     background: #f2f2f2;
 }
+
+
+/*      PARTE DELLA REGISTRAZIONE   */
+
+
+.section-registration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url("https://hips.hearstapps.com/hmg-prod/images/gettyimages-1281166499.jpg") no-repeat center/cover;
+}
+
+.form-container {
+    width: 600px;
+    height: 700px;
+    overflow: auto;
+}
+
+.form-box-registration {
+    position: relative;
+    width: 600px;
+    height: auto;
+    max-width: 90%;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.form-box-registration h1 {
+    font-size: 2em;
+    color: #393E46;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.input-box-registration {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+}
+
+.input-box-registration label {
+    display: block;
+    color: #393E46;
+    font-size: 1em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.input-box-registration input {
+    width: 85%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #393E46;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    border-bottom: 2px solid #393E46;
+}
+
+.input-box-registration input:focus {
+    border-bottom-color: #6D9886;
+}
+
+.input-box-registration i {
+    position: absolute;
+    right: 8px;
+    color: #393E46;
+    font-size: 1.2em;
+    top: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.register {
+    font-size: 0.9em;
+    color: #ffffff;
+    text-align: center;
+    margin: 25px 0 10px;
+}
+
+.register p {
+    margin: 0;
+}
+
+.register p a {
+    text-decoration: none;
+    color: #393E46;
+    font-weight: 600;
+}
+
+.register p a:hover {
+    color: #6D9886;
+    text-decoration: underline;
+}
+
+
 
 
 
