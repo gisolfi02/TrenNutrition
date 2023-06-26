@@ -6,6 +6,7 @@
 <%@ page import="model.Carrello" %>
 <%@ page import="java.math.BigDecimal" %>
 <%@ page import="java.math.RoundingMode" %>
+<%@ page import="model.Ordine" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,7 @@
 </head>
 <body>
 <section id="header">
-    <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
+  <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
   <div class="search-bar">
     <input type="text" placeholder="Cerca...">
     <button type="submit"><i class="fas fa-search"></i></button>
@@ -40,7 +41,7 @@
       </c:choose>
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
       <c:if test="${!empty utente}">
-      <li><h5>Ciao, ${utente.nome}</h5></li>
+        <li><h5>Ciao, ${utente.nome}</h5></li>
       </c:if>
     </ul>
   </div>
@@ -50,47 +51,23 @@
 <main>
   <!-- Il contenuto della pagina va qui -->
   <%
-    Utente utente = (Utente) request.getSession().getAttribute("utente");
-  if(utente == null){%>
-   <h3>Per visualizzare il carrello <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp">accedi</a> o <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html">registrati</a></h3>
-<%}else{
-    Carrello carrello = (Carrello) request.getSession().getAttribute("carrello");
-    List<Prodotto> prodotti = (List<Prodotto>) request.getAttribute("prodottiCarrello");
-    List<Integer> quantita = carrello.getQuantita();
-    if(prodotti != null){
-      if(prodotti.isEmpty()){%>
-      <h3>Il carrello e' vuoto, prova ad aggiungere qualcosa</h3>
-    <%}else{
-      Double totale = 0D;
-      int i = 0;
-      for(Prodotto p : prodotti){
-        totale+=p.getPrezzo()*quantita.get(i);%>
-    <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
-        <div>
-        <img src="img/<%=p.getNome()%><%=p.getId()%>.jpg">
+    Ordine ordine = (Ordine) request.getAttribute("ordine");
+    List<Prodotto> prodotti = (List<Prodotto>) request.getAttribute("prodottiordine");
+    List<Integer> quantita = ordine.getQuantita();
+    int i = 0;%>
+  <h1>Riepilogo Ordine N: <%=ordine.getNumeroOrdine()%></h1>
+  <%
+    for(Prodotto p : prodotti){%>
+      <div>
+        <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=<%=p.getId()%>" style="text-decoration: none"><img src="img/<%=p.getNome()%><%=p.getId()%>.jpg"></a>
         <h3><%=p.getNome()%></h3>
         <h6><%=p.getPrezzo()%>€</h6>
         <h6>Quantità:<%=quantita.get(i)%></h6>
-        <form action="rimuovi" method="post">
-          <input type="hidden" name="id" value="<%=p.getId()%>">
-          <input type="submit" value="Rimuovi dal carrello">
-        </form>
-        </div>
-        <a/>
-        <%i++;}
-            BigDecimal tot = new BigDecimal(totale).setScale(2, RoundingMode.HALF_UP);
-            totale = Double.valueOf(String.valueOf(tot));
-        %>
-      <h4>Totale: <%=totale%>€</h4>
-      <form action="checkout" method="get">
-          <input type="hidden" name="totale" value="<%=totale%>">
-          <input type="submit" value="Vai al checkout">
-      </form>
-    <%}
-    }else {%>
-      <h3>Il carrello e' vuoto, prova ad aggiungere qualcosa</h3
-        <%}
-  }%>
+      </div>
+
+      <%i++;}
+      %>
+    <h4>Totale: <%=ordine.getTotale()%>€</h4>
 </main>
 
 <footer>

@@ -13,11 +13,13 @@
 
 </head>
 <body>
-<<section id="header">
+<section id="header">
   <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
   <div class="search-bar">
-    <input type="text" placeholder="Cerca...">
-    <button type="submit"><i class="fas fa-search"></i></button>
+    <form method="post" action="ricerca">
+      <input type="text" name="ricerca" placeholder="Cerca...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
   </div>
   <div>
     <ul id="navbar">
@@ -34,39 +36,18 @@
       </c:choose>
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
       <c:if test="${!empty utente}">
-      <li><h5>Ciao, ${utente.nome}</h5></li>
+        <li><h5>Ciao, ${utente.nome}</h5></li>
       </c:if>
     </ul>
   </div>
 </section>
 
-
-
 <main>
   <!-- Il contenuto della pagina va qui -->
-  <img src="img/${prodotto.nome}${prodotto.id}.jpg" style="float: left">
-  <h1>${prodotto.nome}</h1><br>
-  <h5>${prodotto.descrizione}</h5><br>
-  <form action="Aggiungi" method="post">
-    <input type="hidden" name="id" value="${prodotto.id}">
-    <label>${prodotto.prezzo}€</label><br>
-    <label>Quantità:</label>
-    <select name="quantita">
-      <option value="0">0</option>
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-    </select>
-    <input type="submit" value="Aggiungi al carrello">
-  </form>
-  <c:if test="${richiesta == 0}">
-    <p style="color:red;">Per aggiungere il prodotto al carrello <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp">accedi</a> o <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html">registrati</a></p>
-  </c:if>
-  <c:if test="${aggiunta == 1}">
-    <p style="color:green">Prodotto aggiunto al carrello</p>
-  </c:if>
+  <h2>Ordine confermato!</h2>
+  <label>Numero ordine: ${ordine.numeroOrdine}</label><br>
+  <label>Totale: ${ordine.totale}</label><br>
+  <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><button>Torna alla home</button></a>
 </main>
 
 <footer>

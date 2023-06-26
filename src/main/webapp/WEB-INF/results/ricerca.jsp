@@ -14,7 +14,7 @@
 </head>
 <body>
 <section id="header">
-  <a href="#"><img src="/img/Logo.png" class="logo"></a>
+  <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
   <div class="search-bar">
     <form method="post" action="ricerca">
       <input type="text" name="ricerca" placeholder="Cerca...">
@@ -35,6 +35,9 @@
         </c:otherwise>
       </c:choose>
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
+      <c:if test="${!empty utente}">
+      <li><h5>Ciao, ${utente.nome}</h5></li>
+      </c:if>
     </ul>
   </div>
 </section>
