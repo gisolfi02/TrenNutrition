@@ -16,7 +16,7 @@
 <section id="header">
   <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
   <div class="search-bar">
-    <form method="post" action="ricerca">
+    <form method="post" action="ricerca" autocomplete="off">
       <input type="text" name="ricerca" placeholder="Cerca...">
       <button type="submit"><i class="fas fa-search"></i></button>
     </form>
@@ -43,7 +43,7 @@
 </section>
 
 <main>
-  <form method="post" action = "SaveProdotto" enctype="multipart/form-data">
+  <form method="post" action = "SaveProdotto" enctype="multipart/form-data" autocomplete="off">
     <input type="file" name="file"><br>
     <label>Nome Prodotto: </label>
     <input type="text" name="nome"><br>

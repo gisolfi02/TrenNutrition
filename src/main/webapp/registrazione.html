@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <title>Tren Nutrition</title>
   <script type="text/javascript">
-    function validateForm() {
+    function validateForm(){
       let email = document.getElementById("email").value;
       let password = document.getElementById("password").value;
       let emailPattern = /^([a-z0-9_\.-]+@[a-z\d\.-]+\.[a-z\.]{2,6})$/;
@@ -64,7 +64,7 @@
   <section class="section-registration">
     <div class="form-container">
       <div class="form-box-registration">
-        <form action="Registrazione" method="post">
+        <form onsubmit="return validateForm()" action="Registrazione" method="post" autocomplete="off">
           <h1>CREA UN ACCOUNT</h1>
           <div class="input-box-registration">
             <label><b>Nome</b></label>
@@ -105,7 +105,7 @@
               <input type="text" name="cap">
             </div>
           </fieldset>
-          <button type="submit" value="Registrati">Registrati</button>
+          <button type="submit" value="Registrati" onsubmit="return validateForm()">Registrati</button>
         </form>
       </div>
     </div>

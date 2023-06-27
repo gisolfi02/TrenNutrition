@@ -17,7 +17,7 @@
   <section id="header">
     <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
     <div class="search-bar">
-      <form method="post" action="ricerca">
+      <form method="post" action="ricerca" autocomplete="off">
         <input type="text" name="ricerca" placeholder="Cerca...">
         <button type="submit"><i class="fas fa-search"></i></button>
       </form>
@@ -42,7 +42,6 @@
       </ul>
     </div>
   </section>
-
     <main>
       <!-- Il contenuto della pagina va qui -->
       <ul>

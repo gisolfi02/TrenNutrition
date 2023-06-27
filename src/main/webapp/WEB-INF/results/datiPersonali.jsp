@@ -14,20 +14,12 @@
   <script type="text/javascript">
     function validateForm() {
       let email = document.getElementById("email").value;
-      let password = document.getElementById("password").value;
       let emailPattern = /^([a-z0-9_\.-]+@[a-z\d\.-]+\.[a-z\.]{2,6})$/;
-      let passwordPattern = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
 
       if (!emailPattern.test(email)) {
         alert("Email non valida");
         return false;
       }
-
-      if (!passwordPattern.test(password)) {
-        alert("La password deve contenere almeno 1 numero, 1 carattere maiuscolo, 1 minuscolo, 1 carattere non alfanumerico e non deve contenere spazi");
-        return false;
-      }
-
       return true;
     }
     function passwordToggle(){
@@ -48,7 +40,7 @@
 <section id="header">
   <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
   <div class="search-bar">
-    <form method="post" action="ricerca">
+    <form method="post" action="ricerca" autocomplete="off">
       <input type="text" name="ricerca" placeholder="Cerca...">
       <button type="submit"><i class="fas fa-search"></i></button>
     </form>
@@ -77,7 +69,7 @@
 
 <main>
   <!-- Il contenuto della pagina va qui -->
-  <form action="SalvaModifiche" method="post">
+  <form onsubmit="return validateForm()" action="SalvaModifiche" method="post" autocomplete="off">
     <label><b>Nome</b></label><br>
     <input type="text" name="nome" value="${utente.nome}"><br>
     <label><b>Cognome</b></label>

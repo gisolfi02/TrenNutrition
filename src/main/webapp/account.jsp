@@ -14,7 +14,7 @@
 <section id="header">
     <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
     <div class="search-bar">
-        <form method="post" action="ricerca">
+        <form method="post" action="ricerca" autocomplete="off">
             <input type="text" name="ricerca" placeholder="Cerca...">
             <button type="submit"><i class="fas fa-search"></i></button>
         </form>
@@ -51,7 +51,7 @@
                 </c:if>
                 <section class="section-logIn">
                     <div class="form-box">
-                        <form action="Login" method="get">
+                        <form action="Login" method="get" autocomplete="off">
                             <h1>ACCEDI</h1>
                             <div class="input-box">
                                 <i class="fa-solid fa-envelope"></i>
