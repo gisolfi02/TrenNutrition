@@ -1,3 +1,5 @@
+<%@ page import="model.Categoria" %>
+<%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
@@ -42,19 +44,17 @@
   </div>
 </section>
 <main>
-  <!-- Il contenuto della pagina va qui -->
-  <!-- Carico tutti i prodotti dal server -->
-  <div class="prodotti">
-    <c:forEach items="${ricerca}" var="prodotto">
-      <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
-        <div class="prodotto">
-          <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
-          <h3 style="color: black">${prodotto.nome}</h3>
-          <p style="color: #393E46">${prodotto.prezzo}€</p>
-        </div>
-      </a>
-    </c:forEach>
+  <div class="categorie">
+    <%
+      List<Categoria> categorie = (List<Categoria>) request.getServletContext().getAttribute("categorie");
+      for(Categoria c: categorie) {%>
+      <div class="categoria">
+        <a href = "http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categoria?cat=<%=c.getId()%>" style = "text-decoration: none;color: #393E46" ><h2><%=c.getNome()%></h2 ></a>
+      </div >
+      <%}%>
+
   </div>
+
 </main>
 
 <footer>

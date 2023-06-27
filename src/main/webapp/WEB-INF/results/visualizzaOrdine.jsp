@@ -23,14 +23,16 @@
 <section id="header">
   <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
   <div class="search-bar">
-    <input type="text" placeholder="Cerca...">
-    <button type="submit"><i class="fas fa-search"></i></button>
+    <form method="post" action="ricerca">
+      <input type="text" name="ricerca" placeholder="Cerca...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
   </div>
   <div>
     <ul id="navbar">
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
-      <li><a href="#">Chi siamo</a></li>
-      <li><a href="#">Prodotti</a></li>
+      <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/ChiSiamo.jsp">Chi siamo</a></li>
+      <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
       <c:choose>
         <c:when test="${!empty utente && utente.admin}">
           <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/utenti">Utenti</a></li>

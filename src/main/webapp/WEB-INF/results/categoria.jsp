@@ -41,11 +41,11 @@
     </ul>
   </div>
 </section>
+
 <main>
-  <!-- Il contenuto della pagina va qui -->
-  <!-- Carico tutti i prodotti dal server -->
+  <h4>I risultati della ricerca per la categoria "${categoria.nome}" sono:</h4>
   <div class="prodotti">
-    <c:forEach items="${ricerca}" var="prodotto">
+    <c:forEach items="${prodotticategoria}" var="prodotto">
       <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
         <div class="prodotto">
           <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>

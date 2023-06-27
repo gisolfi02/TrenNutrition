@@ -43,19 +43,11 @@
 </section>
 
 <main>
-    <!-- Il contenuto della pagina va qui -->
-    <!-- Carico tutti i prodotti dal server -->
-    <div class="prodotti">
-    <c:forEach items="${prodotti}" var="prodotto">
-        <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
-            <div class="prodotto">
-                <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
-                <h3 style="color: black">${prodotto.nome}</h3>
-                <p style="color: #393E46">${prodotto.prezzo}€</p>
-            </div>
-        </a>
-    </c:forEach>
-    </div>
+    <h2 style="text-align: center">Tren Nutrition</h2>
+    <p>Ciao a tutti, ci presentiamo, noi siamo Andrea e Antonio, i creatori di Tren Nutrition.<br> Siamo due studenti dell'università di Salerno che hanno
+    realizzato questo sito per tutti coloro, come noi, sono appassionati di palestra e cercano i giusti integratori per poter aumentare la propria massa muscolare e forza.<br>Tren nutrition
+    offre prodotti di ottima qualità provenienti dai migliori fornitori del settore come "Prozis" e "Bulk". L'idea nasce per evitare di dover perdere ore e ore a navigare sul web alla ricerca del giusto integratore.
+    Qui su TrenNutrition li potrete trovare tutti, basta cercare. Quindi, cosa aspetti, corri a comprare i tuoi integratori!</p>
 </main>
 
 <footer>

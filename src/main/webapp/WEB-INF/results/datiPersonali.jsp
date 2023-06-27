@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="f" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
 
@@ -26,7 +30,6 @@
 
       return true;
     }
-
     function passwordToggle(){
       let password = document.getElementById("password");
       let icon = document.getElementById("showpassword");
@@ -39,79 +42,65 @@
       }
     }
   </script>
-
 </head>
 
 <body>
 <section id="header">
   <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
   <div class="search-bar">
-    <input type="text" placeholder="Cerca...">
-    <button type="submit"><i class="fas fa-search"></i></button>
+    <form method="post" action="ricerca">
+      <input type="text" name="ricerca" placeholder="Cerca...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </form>
   </div>
   <div>
     <ul id="navbar">
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/ChiSiamo.jsp">Chi siamo</a></li>
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
-      <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/carrello"><i class="fas fa-shopping-cart"></i></a></li>
+      <c:choose>
+        <c:when test="${!empty utente && utente.admin}">
+          <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/utenti">Utenti</a></li>
+        </c:when>
+        <c:otherwise>
+          <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/carrello"><i class="fas fa-shopping-cart"></i></a></li>
+        </c:otherwise>
+      </c:choose>
       <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
+      <c:if test="${!empty utente}">
+        <li><h5>Ciao, ${utente.nome}</h5></li>
+      </c:if>
     </ul>
   </div>
 </section>
 
-<main>
-  <section class="section-registration">
-    <div class="form-container">
-      <div class="form-box-registration">
-        <form action="Registrazione" method="post">
-          <h1>CREA UN ACCOUNT</h1>
-          <div class="input-box-registration">
-            <label><b>Nome</b></label>
-            <input type="text" name="nome">
-          </div>
-          <div class="input-box-registration">
-            <label><b>Cognome</b></label>
-            <input type="text" name="cognome">
-          </div>
-          <div class="input-box-registration">
-            <label><b>Username</b></label>
-            <input type="text" name="username">
-          </div>
-          <div class="input-box-registration">
-            <label><b>Email</b></label>
-            <input type="email" name="email" id="email">
-          </div>
-          <div class="input-box-registration">
-            <label><b>Password</b></label>
-            <input type="password" name="password" id="password"><i id="showpassword"class="fa-regular fa-eye-slash" onclick="passwordToggle()"></i></input>
-          </div>
-          <div class="input-box-registration">
-            <label><b>Telefono</b></label>
-            <input type="text" name="telefono">
-          </div>
-          <fieldset>
-            <div class="input-box-registration">
-              <legend><b>Indirizzo</b></legend>
-              <label><b>Via</b></label>
-              <input type="text" name="via">
-            </div>
-            <div class="input-box-registration">
-              <label><b>N. Civico</b></label>
-              <input type="text" name="civico">
-            </div>
-            <div class="input-box-registration">
-              <label><b>CAP</b></label>
-              <input type="text" name="cap">
-            </div>
-          </fieldset>
-          <button type="submit" value="Registrati">Registrati</button>
-        </form>
-      </div>
-    </div>
-  </section>
-</main>
 
+<main>
+  <!-- Il contenuto della pagina va qui -->
+  <form action="SalvaModifiche" method="post">
+    <label><b>Nome</b></label><br>
+    <input type="text" name="nome" value="${utente.nome}"><br>
+    <label><b>Cognome</b></label>
+    <input type="text" name="cognome" value="${utente.cognome}"><br>
+    <label><b>Username</b></label>
+    <input type="text" name="username" value="${utente.username}"><br>
+    <label><b>Email</b></label>
+    <input type="email" name="email" id="email" value="${utente.email}" style="width: 250px"><br>
+    <label><b>Telefono</b></label>
+    <input type="text" name="telefono" value="${utente.telefono}"><br>
+    <fieldset>
+        <legend><b>Indirizzo</b></legend>
+        <label><b>Via</b></label>
+        <input type="text" name="via" value="${utente.via}"><br>
+        <label><b>N. Civico</b></label>
+        <input type="text" name="civico" value="${utente.ncivico}"><br>
+        <label><b>CAP</b></label>
+        <input type="text" name="cap" value="${utente.CAP}"><br>
+    </fieldset>
+    <input type="hidden" name ="id" value="${utente.id}">
+    <input type="submit" value="Salva Modifiche">
+  </form>
+</main>
 
 <footer>
   <!-- Il piè di pagina va qui -->
