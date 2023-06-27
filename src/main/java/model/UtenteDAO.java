@@ -117,12 +117,16 @@ public class UtenteDAO {
     public void doUpdate(Utente utente){
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps = con.prepareStatement(
-                    "UPDATE utente SET nome=?, cognome=?, username=?, Tel=? WHERE id=?");
+                    "UPDATE utente SET nome=?, cognome=?, username=?, email=?, Tel=?, Via=?, Ncivico=?,CAP=?  WHERE id=?");
             ps.setString(1, utente.getNome());
             ps.setString(2, utente.getCognome());
             ps.setString(3, utente.getUsername());
-            ps.setString(4, utente.getTelefono());
-            ps.setInt(5, utente.getId());
+            ps.setString(4, utente.getEmail());
+            ps.setString(5, utente.getTelefono());
+            ps.setString(6,utente.getVia());
+            ps.setInt(7,utente.getNcivico());
+            ps.setString(8,utente.getCAP());
+            ps.setInt(9,utente.getId());
             ps.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);

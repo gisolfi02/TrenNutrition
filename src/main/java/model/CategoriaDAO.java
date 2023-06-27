@@ -10,7 +10,7 @@ public class CategoriaDAO {
     public List<Categoria> doRetrieveAll(){
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("SELECT * FROM categoria");
+                    con.prepareStatement("SELECT id, nome FROM categoria");
             ResultSet rs = ps.executeQuery();
             List<Categoria> categorie = new ArrayList<>();
             while (rs.next()) {

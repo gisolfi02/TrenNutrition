@@ -433,3 +433,12 @@ main{
     width: 25%;
     height: auto;
 }
+
+.categorie{
+    display: flex;
+    flex-wrap: wrap;
+}
+.categoria{
+    width: 50%;
+    height: auto;
+}

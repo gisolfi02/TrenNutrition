@@ -14,14 +14,16 @@
 <section id="header">
     <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
     <div class="search-bar">
-        <input type="text" placeholder="Cerca...">
-        <button type="submit"><i class="fas fa-search"></i></button>
+        <form method="post" action="ricerca">
+            <input type="text" name="ricerca" placeholder="Cerca...">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
     </div>
     <div>
         <ul id="navbar">
             <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
-            <li><a href="#">Chi siamo</a></li>
-            <li><a href="#">Prodotti</a></li>
+            <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/ChiSiamo.jsp">Chi siamo</a></li>
+            <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
             <c:choose>
                 <c:when test="${!empty utente && utente.admin}">
                     <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/utenti">Utenti</a></li>
@@ -32,7 +34,7 @@
             </c:choose>
             <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
             <c:if test="${!empty utente}">
-            <li><h5>Ciao, ${utente.nome}</h5></li>
+                <li><h5>Ciao, ${utente.nome}</h5></li>
             </c:if>
         </ul>
     </div>
@@ -78,7 +80,7 @@
                             <h2> Bentornato <b>${utente.nome}</b>, questa &egrave la tua pagina riservata</h2>
                             <ul>
                                 <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/ordini">I tuoi ordini</a></li>
-                                <li><a href="#">Le tue informazioni personali</a></li>
+                                <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/info">Le tue informazioni personali</a></li>
                             </ul>
                             <form action="Login?esci=1" method="post">
                                 <button type="submit" name="submit" value="Esci">Esci</button>
@@ -87,10 +89,16 @@
                    </section>
                 </c:when>
                 <c:otherwise>
-                    <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/Add">Aggiungi Prodotto</a>
+                    <section class="section-user">
+                    <div class="form-box-user">
+                    <ul>
+                        <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/Add">Aggiungi Prodotto</a></li>
+                    </ul>
                     <form action="Login?esci=1" method="post">
-                        <input type="submit" name="submit" value="Esci">
+                        <button type="submit" name="submit" value="Esci">Esci</button>
                     </form>
+                    </div>
+                    </section>
                 </c:otherwise>
             </c:choose>
         </c:otherwise>
