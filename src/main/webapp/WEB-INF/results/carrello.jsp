@@ -16,7 +16,6 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <title>Tren Nutrition</title>
-
 </head>
 <body>
 <section id="header">
@@ -66,15 +65,15 @@
       int i = 0;
       for(Prodotto p : prodotti){
         totale+=p.getPrezzo()*quantita.get(i);%>
-    <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
-        <div>
+    <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=<%=p.getId()%>" style="text-decoration: none">
+        <div style="color: #393E46">
         <img src="img/<%=p.getNome()%><%=p.getId()%>.jpg">
         <h3><%=p.getNome()%></h3>
         <h6><%=p.getPrezzo()%>€</h6>
         <h6>Quantità:<%=quantita.get(i)%></h6>
         <form action="rimuovi" method="post">
           <input type="hidden" name="id" value="<%=p.getId()%>">
-          <input type="submit" value="Rimuovi dal carrello">
+            <button type="submit" id="removeToCart"><i class="fa-solid fa-trash" style="color: #393E46"></i></button>
         </form>
         </div>
         <a/>
