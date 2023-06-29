@@ -66,46 +66,56 @@
       <div class="form-box-registration">
         <form onsubmit="return validateForm()" action="Registrazione" method="post" autocomplete="off">
           <h1>CREA UN ACCOUNT</h1>
-          <div class="input-box-registration">
-            <label><b>Nome</b></label>
-            <input type="text" name="nome">
-          </div>
-          <div class="input-box-registration">
-            <label><b>Cognome</b></label>
-            <input type="text" name="cognome">
-          </div>
-          <div class="input-box-registration">
-            <label><b>Username</b></label>
-            <input type="text" name="username">
-          </div>
-          <div class="input-box-registration">
-            <label><b>Email</b></label>
-            <input type="email" name="email" id="email">
-          </div>
-          <div class="input-box-registration">
-            <label><b>Password</b></label>
-            <input type="password" name="password" id="password"><i id="showpassword"class="fa-regular fa-eye-slash" onclick="passwordToggle()"></i></input>
-          </div>
-          <div class="input-box-registration">
-            <label><b>Telefono</b></label>
-            <input type="text" name="telefono">
-          </div>
-          <fieldset>
+
+          <div class="left-div">
             <div class="input-box-registration">
+              <label><b>Nome</b></label>
+              <input type="text" name="nome">
+            </div>
+            <div class="input-box-registration">
+              <label><b>Cognome</b></label>
+              <input type="text" name="cognome">
+            </div>
+            <div class="input-box-registration">
+              <label><b>Username</b></label>
+              <input type="text" name="username">
+            </div>
+            <div class="input-box-registration">
+              <label><b>Email</b></label>
+              <input type="email" name="email" id="email">
+            </div>
+            <div class="input-box-registration">
+              <label><b>Password</b></label>
+              <input type="password" name="password" id="password"><i id="showpassword" class="fa-regular fa-eye-slash" onclick="passwordToggle()"></i></input>
+            </div>
+          </div>
+
+          <div class="right-div">
+            <div class="input-box-registration">
+              <label><b>Telefono</b></label>
+              <input type="text" name="telefono">
+            </div>
+            <fieldset class="fieldset-custom">
               <legend><b>Indirizzo</b></legend>
-              <label><b>Via</b></label>
-              <input type="text" name="via">
-            </div>
-            <div class="input-box-registration">
-              <label><b>N. Civico</b></label>
-              <input type="text" name="civico">
-            </div>
-            <div class="input-box-registration">
-              <label><b>CAP</b></label>
-              <input type="text" name="cap">
-            </div>
-          </fieldset>
-          <button type="submit" value="Registrati" onsubmit="return validateForm()">Registrati</button>
+              <div class="input-box-registration">
+                <label><b>Via</b></label>
+                <input type="text" name="via">
+              </div>
+              <div class="input-box-registration">
+                <label><b>N. Civico</b></label>
+                <input type="text" name="civico">
+              </div>
+              <div class="input-box-registration">
+                <label><b>CAP</b></label>
+                <input type="text" name="cap">
+              </div>
+            </fieldset>
+          </div>
+
+          <div class="button-container">
+            <button type="submit" value="Registrati" onsubmit="return validateForm()">Registrati</button>
+          </div>
+
         </form>
       </div>
     </div>
