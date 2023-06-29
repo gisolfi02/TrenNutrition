@@ -429,7 +429,6 @@ main{
     flex-wrap: wrap;
 }
 .prodotto {
-    margin: 10px;
     width: 25%;
     height: auto;
 }
@@ -441,4 +440,25 @@ main{
 .categoria{
     width: 50%;
     height: auto;
+}
+#addToCart,#removeToCart{
+    text-decoration: none;
+    border: none;
+    background-color: white;
+    width: 30px;
+    height: auto;
+}
+
+#aggiunto {
+    color:green;
+    display: none;
+}
+#accedi{
+    color: red;
+    display: none;
+}
+.bordo{
+    padding: 0;
+    margin: 10px;
+    border: 2px solid #393E46;
 }

@@ -47,17 +47,18 @@
     <!-- Carico tutti i prodotti dal server -->
     <div class="prodotti">
     <c:forEach items="${prodotti}" var="prodotto">
-        <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
-            <div class="prodotto">
-                <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
+        <div class="bordo">
+            <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
+                <div class="prodotto">
+                    <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
+                </div>
                 <h3 style="color: black">${prodotto.nome}</h3>
                 <p style="color: #393E46">${prodotto.prezzo}€</p>
-            </div>
-        </a>
+            </a>
+        </div>
     </c:forEach>
     </div>
 </main>
-
 <footer>
     <!-- Il piè di pagina va qui -->
 </footer>

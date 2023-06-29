@@ -53,21 +53,30 @@
     <label>${prodotto.prezzo}€</label><br>
     <label>Quantità:</label>
     <select name="quantita">
-      <option value="0">0</option>
       <option value="1">1</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5</option>
     </select>
-    <input type="submit" value="Aggiungi al carrello">
+    <button type="submit" id="addToCart"><i class="fas fa-shopping-cart" style="color: #393E46;"></i></button>
   </form>
   <c:if test="${richiesta == 0}">
-    <p style="color:red;">Per aggiungere il prodotto al carrello <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp">accedi</a> o <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html">registrati</a></p>
+    <script>
+      $(function(){
+        $("#accedi").fadeIn();
+      })
+    </script>
   </c:if>
   <c:if test="${aggiunta == 1}">
-    <p style="color:green">Prodotto aggiunto al carrello</p>
+    <script>
+      $(function(){
+        $("#aggiunto").fadeIn();
+      })
+    </script>
   </c:if>
+  <p id="accedi">Per aggiungere il prodotto al carrello <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp">accedi</a> o <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html">registrati</a></p>
+  <p id="aggiunto" >Prodotto aggiunto al carrello</p>
 </main>
 
 <footer>
