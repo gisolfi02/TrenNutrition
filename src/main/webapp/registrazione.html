@@ -17,6 +17,10 @@
       if (!emailPattern.test(email)) {
         alert("Email non valida");
         return false;
+      }else{
+          if(!ajaxValidate()){
+            return false;
+          }
       }
 
       if (!passwordPattern.test(password)) {
@@ -26,7 +30,21 @@
 
       return true;
     }
-
+    function ajaxValidate(email){
+      let xml = new XMLHttpRequest();
+      xml.onreadystatechange = function(){
+        if(this.readyState == 4 && this.status==200){
+          if(this.responseText ==="invalid"){
+            alert("L'email &egrave; già associata ad un account")
+            return false
+          }else {
+            return true
+          }
+        }
+      }
+      xml.open("GET","check?email="+email,true);
+      xml.send();
+    }
     function passwordToggle(){
       let password = document.getElementById("password");
       let icon = document.getElementById("showpassword");
@@ -105,7 +123,7 @@
               <input type="text" name="cap">
             </div>
           </fieldset>
-          <button type="submit" value="Registrati" onsubmit="return validateForm()">Registrati</button>
+          <button type="submit" value="Registrati">Registrati</button>
         </form>
       </div>
     </div>
