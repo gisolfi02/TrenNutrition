@@ -2,6 +2,7 @@
 <html>
 
 <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -15,34 +16,46 @@
       let passwordPattern = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
 
       if (!emailPattern.test(email)) {
-        alert("Email non valida");
+        $(function(){
+          $(" #email").css("border-bottom","2px solid #ff0000")
+          alert("Email non valida")
+        })
         return false;
-      }else{
-          if(!ajaxValidate()){
-            return false;
-          }
       }
 
       if (!passwordPattern.test(password)) {
-        alert("La password deve contenere almeno 1 numero, 1 carattere maiuscolo, 1 minuscolo, 1 carattere non alfanumerico e non deve contenere spazi");
+        $(function (){
+          $("#password").css("border-bottom","2px solid #ff0000")
+          alert("La password deve contenere almeno 1 numero, 1 carattere maiuscolo, 1 minuscolo, 1 carattere non alfanumerico e non deve contenere spazi");
+        })
         return false;
       }
 
       return true;
     }
-    function ajaxValidate(email){
+
+    $(function (){
+      $("#email").blur(function (){
+        ajaxValidate();
+      })
+    })
+    function ajaxValidate(){
+      let email = document.getElementById("email").value;
       let xml = new XMLHttpRequest();
       xml.onreadystatechange = function(){
         if(this.readyState == 4 && this.status==200){
           if(this.responseText ==="invalid"){
-            alert("L'email &egrave; già associata ad un account")
+            $(function(){
+              $(".input-box-registration #email").css("border-bottom","2px solid #ff0000")
+              alert("L'email \u00E8 gi\u00E0 associata ad un account")
+            })
             return false
           }else {
-            return true
+            return true;
           }
         }
       }
-      xml.open("GET","check?email="+email,true);
+      xml.open("POST","check?email="+email,true);
       xml.send();
     }
     function passwordToggle(){
@@ -100,7 +113,7 @@
             </div>
             <div class="input-box-registration">
               <label><b>Email</b></label>
-              <input type="email" name="email" id="email">
+              <input type="email" name="email" id="email" title="">
             </div>
             <div class="input-box-registration">
               <label><b>Password</b></label>

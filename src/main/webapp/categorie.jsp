@@ -43,7 +43,7 @@
     </ul>
   </div>
 </section>
-<main class="margin">
+<main>
   <div class="categorie">
     <%
       List<Categoria> categorie = (List<Categoria>) request.getServletContext().getAttribute("categorie");
