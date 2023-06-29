@@ -42,7 +42,7 @@
     </div>
 </section>
 
-<main>
+<main class="margin">
     <h2 style="text-align: center">Tren Nutrition</h2>
     <p>Ciao a tutti, ci presentiamo, noi siamo Andrea e Antonio, i creatori di Tren Nutrition.<br> Siamo due studenti dell'università di Salerno che hanno
     realizzato questo sito per tutti coloro, come noi, sono appassionati di palestra e cercano i giusti integratori per poter aumentare la propria massa muscolare e forza.<br>Tren nutrition
