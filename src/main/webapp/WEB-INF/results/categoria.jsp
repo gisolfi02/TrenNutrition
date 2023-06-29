@@ -46,13 +46,15 @@
   <h4>I risultati della ricerca per la categoria "${categoria.nome}" sono:</h4>
   <div class="prodotti">
     <c:forEach items="${prodotticategoria}" var="prodotto">
+      <div class="bordo">
       <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
         <div class="prodotto">
           <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
-          <h3 style="color: black">${prodotto.nome}</h3>
-          <p style="color: #393E46">${prodotto.prezzo}€</p>
         </div>
+        <h3 style="color: black">${prodotto.nome}</h3>
+        <p style="color: #393E46">${prodotto.prezzo}€</p>
       </a>
+      </div>
     </c:forEach>
   </div>
 </main>
