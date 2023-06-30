@@ -438,21 +438,19 @@ main{
     padding: 10px;
 }
 
-
-
-
 .prodotti {
     display: flex;
     flex-wrap: wrap;
 }
 .prodotto {
-    width: 25%;
+    width: 50%;
     height: auto;
 }
 
 .categorie{
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 .categoria{
     width: 50%;
@@ -478,4 +476,52 @@ main{
     padding: 0;
     margin: 10px;
     border: 2px solid #393E46;
+}
+li.icon{
+    display: none !important;
+}
+/* PARTE RESPONSIVE*/
+
+/*smartphone*/
+@media screen and (max-width: 856px) {
+    #header{
+        flex-direction: row;
+    }
+    #navbar li:not(:last-child){
+        display: none;
+    }
+    #navbar li:nth-child(5), #navbar li:nth-child(4){
+        padding-left:10px;
+        padding-right:10px;
+        display: block;
+        padding-top: 15px;
+    }
+    main{
+        margin-top: 130px;
+    }
+    #navbar li.icon{
+        display: block !important;
+        float: right;
+        color: #393E46;
+        padding-top: 15px;
+        padding-left:10px;
+        padding-right:10px;
+    }
+    #navbar .icon:hover{
+        color: #6D9886;
+    }
+    .search-bar input{
+        width: 130px;
+    }
+}
+
+/*tablet*/
+@media screen and (min-width: 856px) and (max-width: 1023px){
+    .search-bar input{
+        width: 150px;
+    }
+    #navbar li{
+        padding-left:15px;
+        padding-right:15px;
+    }
 }

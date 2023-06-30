@@ -27,7 +27,7 @@
         </form>
     </div>
     <div>
-        <ul id="navbar">
+        <ul id="navbar" class="navbar">
             <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
             <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/ChiSiamo.jsp">Chi siamo</a></li>
             <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
@@ -43,6 +43,7 @@
             <c:if test="${!empty utente}">
                 <li><h5>Ciao, ${utente.nome}</h5></li>
             </c:if>
+            <li class="icon"><a href="javascript:void(0);" onclick="myFunction()"><i class="fa-solid fa-bars fa-xl"></i></a></li>
         </ul>
     </div>
 </section>
