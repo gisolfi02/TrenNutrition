@@ -480,6 +480,11 @@ main{
 li.icon{
     display: none !important;
 }
+#addProdotto{
+    display: flex;
+    justify-content: center;
+    margin-top: 130px;
+}
 /* PARTE RESPONSIVE*/
 
 /*smartphone*/
