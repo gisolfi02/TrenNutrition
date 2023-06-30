@@ -10,6 +10,17 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="css/style.css" type="text/css">
   <title>Tren Nutrition</title>
+
+  <script>
+    function photoPreview(){
+      let img = document.getElementById("preview");
+      let file = document.getElementById("file");
+      if(file.files[0]){
+        img.src = URL.createObjectURL(file.files[0])
+      }
+    }
+  </script>
+
 </head>
 
 <body>
@@ -43,19 +54,22 @@
   </div>
 </section>
 
-<main>
-  <form method="post" action = "SaveProdotto" enctype="multipart/form-data" autocomplete="off">
-    <input type="file" name="file"><br>
+<main id="addProdotto">
+  <form method="post" action = "SaveProdotto" enctype="multipart/form-data" autocomplete="off" >
+    <img src="img/noImage.png" id="preview"><br>
+    <input type="file" name="file" onchange="photoPreview()" id="file"><br>
     <label>Nome Prodotto: </label>
     <input type="text" name="nome"><br>
     <label>Descrizione: </label><br>
-    <textarea cols="40" rows="10" name="descrizione"></textarea><br>
+    <textarea cols="40" rows="10" name="descrizione" style="resize: none"></textarea><br>
     <label>Prezzo: </label>
     <input type="text" name="prezzo"><br>
     <label>Categoria: </label>
     <input type="text" name="categoria"><br>
     <input type="submit" value="Aggiungi">
   </form>
+
+
 </main>
 
 <footer>
