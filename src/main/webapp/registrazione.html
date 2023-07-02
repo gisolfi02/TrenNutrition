@@ -1,163 +1,118 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="css/style.css" type="text/css">
-  <title>Tren Nutrition</title>
-  <script type="text/javascript">
-    function validateForm(){
-      let email = document.getElementById("email").value;
-      let password = document.getElementById("password").value;
-      let emailPattern = /^([a-z0-9_\.-]+@[a-z\d\.-]+\.[a-z\.]{2,6})$/;
-      let passwordPattern = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$/;
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Tren Nutrition</title>
+    <script src="js/codici.js"></script>
+  </head>
 
-      if (!emailPattern.test(email)) {
-        $(function(){
-          $(" #email").css("border-bottom","2px solid #ff0000")
-          alert("Email non valida")
-        })
-        return false;
-      }
+  <body>
+    <div class="content">
+      <section id="header">
+        <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
+        <div class="search-bar">
+          <input type="text" placeholder="Cerca...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        <div>
+          <ul id="navbar">
+            <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
+            <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/ChiSiamo.jsp">Chi siamo</a></li>
+            <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
+            <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/carrello"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
+            <li class="icon"><a href="javascript:void(0);" onclick="myFunction()"><i class="fa-solid fa-bars fa-xl"></i></a></li>
+          </ul>
+        </div>
+      </section>
 
-      if (!passwordPattern.test(password)) {
-        $(function (){
-          $("#password").css("border-bottom","2px solid #ff0000")
-          alert("La password deve contenere almeno 1 numero, 1 carattere maiuscolo, 1 minuscolo, 1 carattere non alfanumerico e non deve contenere spazi");
-        })
-        return false;
-      }
+      <navbar id="responsive">
+        <ul class="responsive">
+          <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
+          <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/ChiSiamo.jsp">Chi siamo</a></li>
+          <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
+        </ul>
+      </navbar>
 
-      return true;
-    }
+      <main>
+        <section class="section-registration">
+          <div class="form-container">
+            <div class="form-box-registration">
+              <form onsubmit="return validateForm()" action="Registrazione" method="post" autocomplete="off">
+                <h1>CREA UN ACCOUNT</h1>
 
-    $(function (){
-      $("#email").blur(function (){
-        ajaxValidate();
-      })
-    })
-    function ajaxValidate(){
-      let email = document.getElementById("email").value;
-      let xml = new XMLHttpRequest();
-      xml.onreadystatechange = function(){
-        if(this.readyState == 4 && this.status==200){
-          if(this.responseText ==="invalid"){
-            $(function(){
-              $(".input-box-registration #email").css("border-bottom","2px solid #ff0000")
-              alert("L'email \u00E8 gi\u00E0 associata ad un account")
-            })
-            return false
-          }else {
-            return true;
-          }
-        }
-      }
-      xml.open("POST","check?email="+email,true);
-      xml.send();
-    }
-    function passwordToggle(){
-      let password = document.getElementById("password");
-      let icon = document.getElementById("showpassword");
-      if(password.type==="password"){
-        password.type="text";
-        icon.className = "fa-regular fa-eye";
-      }else{
-        password.type="password";
-        icon.className = "fa-regular fa-eye-slash";
-      }
-    }
-  </script>
+                <div class="left-div">
+                  <div class="input-box-registration">
+                    <label><b>Nome</b></label>
+                    <input type="text" name="nome">
+                  </div>
+                  <div class="input-box-registration">
+                    <label><b>Cognome</b></label>
+                    <input type="text" name="cognome">
+                  </div>
+                  <div class="input-box-registration">
+                    <label><b>Username</b></label>
+                    <input type="text" name="username">
+                  </div>
+                  <div class="input-box-registration">
+                    <label><b>Email</b></label>
+                    <input type="email" name="email" id="email" title="">
+                  </div>
+                  <div class="input-box-registration">
+                    <label><b>Password</b></label>
+                    <input type="password" name="password" id="password"><i id="showpassword" class="fa-regular fa-eye-slash" onclick="passwordToggle()"></i></input>
+                  </div>
+                </div>
 
-</head>
+                <div class="right-div">
+                  <div class="input-box-registration">
+                    <label><b>Telefono</b></label>
+                    <input type="text" name="telefono">
+                  </div>
+                  <fieldset class="fieldset-custom">
+                    <legend><b>Indirizzo</b></legend>
+                    <div class="input-box-registration">
+                      <label><b>Via</b></label>
+                      <input type="text" name="via">
+                    </div>
+                    <div class="input-box-registration">
+                      <label><b>N. Civico</b></label>
+                      <input type="text" name="civico">
+                    </div>
+                    <div class="input-box-registration">
+                      <label><b>CAP</b></label>
+                      <input type="text" name="cap">
+                    </div>
+                  </fieldset>
+                </div>
 
-<body>
-<section id="header">
-  <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><img src="img/Logo.png" class="logo"></a>
-  <div class="search-bar">
-    <input type="text" placeholder="Cerca...">
-    <button type="submit"><i class="fas fa-search"></i></button>
-  </div>
-  <div>
-    <ul id="navbar">
-      <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
-      <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/ChiSiamo.jsp">Chi siamo</a></li>
-      <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
-      <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/carrello"><i class="fas fa-shopping-cart"></i></a></li>
-      <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp"><i class="far fa-user"></i></a></li>
-      <li class="icon"><a href="javascript:void(0);" onclick="myFunction()"><i class="fa-solid fa-bars fa-xl"></i></a></li>
-    </ul>
-  </div>
-</section>
+                <div class="button-container">
+                  <button type="submit" value="Registrati">Registrati</button>
+                </div>
 
-<main>
-  <section class="section-registration">
-    <div class="form-container">
-      <div class="form-box-registration">
-        <form onsubmit="return validateForm()" action="Registrazione" method="post" autocomplete="off">
-          <h1>CREA UN ACCOUNT</h1>
-
-          <div class="left-div">
-            <div class="input-box-registration">
-              <label><b>Nome</b></label>
-              <input type="text" name="nome">
-            </div>
-            <div class="input-box-registration">
-              <label><b>Cognome</b></label>
-              <input type="text" name="cognome">
-            </div>
-            <div class="input-box-registration">
-              <label><b>Username</b></label>
-              <input type="text" name="username">
-            </div>
-            <div class="input-box-registration">
-              <label><b>Email</b></label>
-              <input type="email" name="email" id="email" title="">
-            </div>
-            <div class="input-box-registration">
-              <label><b>Password</b></label>
-              <input type="password" name="password" id="password"><i id="showpassword" class="fa-regular fa-eye-slash" onclick="passwordToggle()"></i></input>
+              </form>
             </div>
           </div>
-
-          <div class="right-div">
-            <div class="input-box-registration">
-              <label><b>Telefono</b></label>
-              <input type="text" name="telefono">
-            </div>
-            <fieldset class="fieldset-custom">
-              <legend><b>Indirizzo</b></legend>
-              <div class="input-box-registration">
-                <label><b>Via</b></label>
-                <input type="text" name="via">
-              </div>
-              <div class="input-box-registration">
-                <label><b>N. Civico</b></label>
-                <input type="text" name="civico">
-              </div>
-              <div class="input-box-registration">
-                <label><b>CAP</b></label>
-                <input type="text" name="cap">
-              </div>
-            </fieldset>
-          </div>
-
-          <div class="button-container">
-            <button type="submit" value="Registrati">Registrati</button>
-          </div>
-
-        </form>
-      </div>
+          </section>
+      </main>
+      <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
     </div>
-    </section>
-</main>
 
-
-<footer>
-  <!-- Il piè di pagina va qui -->
-</footer>
-</body>
+    <footer class="footer">
+      <div class="social"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-facebook-f"></i></a></div>
+      <ul>
+        <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
+        <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
+        <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/ChiSiamo.jsp">About Us</a></li>
+      </ul>
+      <p class="copyright">TrenNutrition © 2023</p>
+    </footer>
+  </body>
 
 </html>
