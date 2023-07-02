@@ -44,6 +44,8 @@ p {
 }
 
 body {
+    position: relative;
+    min-height: 100vh;
     width: 100%;
 }
 
@@ -140,7 +142,9 @@ body {
     background-color: #6D9886;
 }
 
-
+#responsive{
+    display: none;
+}
 
 /*  QUESTA PARTE DEL CSS E SOLO PER IL LOG-IN  */
 .section-logIn{
@@ -485,10 +489,94 @@ li.icon{
     justify-content: center;
     margin-top: 130px;
 }
+/*bottone torna su*/
+#scrollToTop{
+    width: 30px;
+    height: 30px;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    border-radius: 50%;
+    background-color: #6D9886;
+    color: #F2E7D5;
+}
+#scrollToTop:hover{
+    transform: scale(1.2);
+}
+/*footer*/
+.content{
+    padding-bottom: 15rem;
+}
+.footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10rem;
+    padding:40px 0;
+    background-color:#393E46;
+    color:#F2E7D5;
+}
+
+.footer ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+}
+
+.footer li{
+    padding:0 10px;
+}
+
+.footer ul a{
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+}
+
+.footer ul a:hover{
+    opacity:1;
+}
+
+.footer .social{
+    text-align:center;
+    padding-bottom:25px;
+}
+.footer .social > a{
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #F2E7D5;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+}
+
+.footer .social > a:hover{
+    opacity:0.9;
+}
+
+.footer .copyright{
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+}
+
 /* PARTE RESPONSIVE*/
 
 /*smartphone*/
-@media screen and (max-width: 856px) {
+@media screen and (max-width: 760px) {
     #header{
         flex-direction: row;
     }
@@ -518,10 +606,49 @@ li.icon{
     .search-bar input{
         width: 130px;
     }
+    #responsive{
+        align-items: center;
+        margin-top: 90px;
+        padding: 0 15px;
+        background: #F2E7D5;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+    }
+    .responsive{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-top: 30px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    .responsive li{
+        list-style: none;
+        padding: 0 20px;
+        padding-bottom: 20px;
+        text-align: center;
+    }
+    .responsive li a{
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 600;
+        color: #393E46;
+        transition: 0.3s ease;
+    }
+    .responsive li a:hover,
+    .responsive li a.active {
+        color: #6D9886;
+    }
+
+
 }
 
 /*tablet*/
-@media screen and (min-width: 856px) and (max-width: 1023px){
+@media screen and (min-width: 760px) and (max-width: 1023px){
     .search-bar input{
         width: 150px;
     }
