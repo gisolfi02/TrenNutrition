@@ -454,7 +454,8 @@ button:hover {
 .bordo{
     padding: 0;
     margin: 10px;
-    border: 2px solid #393E46;
+    border: 2px solid #6D9886;
+
 }
 
 /*CSS PER LA VISUALIZZAZIONE DELLE CATEGORIE*/
@@ -462,6 +463,7 @@ button:hover {
     height: 500px;
     display: flex;
     flex-wrap: wrap;
+    padding: 0;
 }
 .categoria{
     display: flex;
@@ -611,6 +613,102 @@ button:hover {
     font-size:13px;
     color:#aaa;
     margin-bottom:0;
+}
+
+
+/* CSS CHI SIAMO*/
+.colonne{
+    display: flex;
+    align-items: center;
+}
+.colonne img{
+    flex-shrink: 0;
+    margin-right: 20px;
+    max-width: 50%;
+    height: auto;
+}
+
+/*CSS SCHERMATA UTENTE DELL'ADMIN*/
+
+.section-user-admin {
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.form-box-user-admin {
+    max-width: 750px;
+    margin: auto;
+}
+
+.form-box-user-admin h1{
+    display: flex;
+    justify-content: center;
+    width: 45%;
+    border-bottom: solid #6D9886 5px;
+}
+
+.form-box-user-admin ul {
+    color: #6D9886;
+    list-style: none;
+}
+
+.form-box-user-admin ul li {
+    font-size: 35px;
+    padding-bottom: 5px;
+    border-bottom: solid #393E46 5px;
+}
+
+.form-box-user-admin ul li p{
+    font-size: 25px;
+    margin: 0;
+}
+
+.form-box-user-admin button {
+    width: 35%;
+    background: #6D9886;
+    border: 3px solid #6D9886;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 400;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+}
+
+.form-box-user-admin button:hover {
+    background: #f2f2f2;
+}
+
+/*CSS MODIFICA UTENTE DA PARTE DELL'ADMIN*/
+
+.form-box-Modifica{
+    position: relative;
+    width: 400px;
+    height: 550px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.form-box-Modifica h1{
+    font-size: 35px;
+    justify-content: center;
+}
+
+.section-Modifica {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: white;
+    background: url("https://hips.hearstapps.com/hmg-prod/images/gettyimages-1281166499.jpg");
+    background-position: unset;
+    background-size: cover;
 }
 
 /* PARTE RESPONSIVE*/

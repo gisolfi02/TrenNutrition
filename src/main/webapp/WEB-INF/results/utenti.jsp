@@ -56,16 +56,21 @@
 
       <main>
         <!-- Il contenuto della pagina va qui -->
-        <ul>
-          <c:forEach items="${utenti}" var="utente">
-            <li> <p>${utente.email} ${utente.username}</p>
-              <form action="modifica" method="get">
-                <input type="hidden" name="id" value="${utente.id}"/>
-                <input type="submit" value="Modifica">
-              </form>
-            </li>
-          </c:forEach>
-        </ul>
+        <section class="section-user-admin">
+          <div class="form-box-user-admin">
+            <h1>Elenco Utenti</h1>
+            <ul>
+              <c:forEach items="${utenti}" var="utente">
+                <li> <p><b>Email : </b> ${utente.email} <b>Username :</b> ${utente.username}</p>
+                  <form action="modifica" method="get">
+                    <input type="hidden" name="id" value="${utente.id}"/>
+                    <button type="submit" name="submit" value="Modofica">Modifica</button>
+                  </form>
+                </li>
+              </c:forEach>
+            </ul>
+          </div>
+        </section>
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
     </div>
