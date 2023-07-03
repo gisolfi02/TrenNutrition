@@ -69,19 +69,27 @@
           List<Prodotto> prodotti = (List<Prodotto>) request.getAttribute("prodottiordine");
           List<Integer> quantita = ordine.getQuantita();
           int i = 0;%>
-        <h1>Riepilogo Ordine N: <%=ordine.getNumeroOrdine()%></h1>
-        <%
-          for(Prodotto p : prodotti){%>
-            <div>
-              <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=<%=p.getId()%>" style="text-decoration: none"><img src="img/<%=p.getNome()%><%=p.getId()%>.jpg"></a>
-              <h3><%=p.getNome()%></h3>
-              <h6><%=p.getPrezzo()%>€</h6>
-              <h6>Quantità:<%=quantita.get(i)%></h6>
-            </div>
+        <div class="ordine">
+          <h1>Riepilogo Ordine N: <%=ordine.getNumeroOrdine()%></h1>
+          <div class="prodottiordine">
+            <%
+            for(Prodotto p : prodotti){%>
+              <div class="cornice">
+                <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=<%=p.getId()%>" style="text-decoration: none"><img src="img/<%=p.getNome()%><%=p.getId()%>.jpg"></a>
+                <h3><%=p.getNome()%></h3>
+                <div class="info">
+                  <h6><%=p.getPrezzo()%>€</h6>
+                  <h6>Quantità:<%=quantita.get(i)%></h6>
+                </div>
+              </div>
 
-            <%i++;}
-            %>
-          <h4>Totale: <%=ordine.getTotale()%>€</h4>
+              <%i++;}
+              %>
+          </div>
+          <div class="riepilogo">
+            <h4>Totale: <%=ordine.getTotale()%>€</h4>
+          </div>
+        </div>
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
     </div>
