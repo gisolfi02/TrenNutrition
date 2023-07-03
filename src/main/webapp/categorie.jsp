@@ -61,9 +61,10 @@
           <%
             List<Categoria> categorie = (List<Categoria>) request.getServletContext().getAttribute("categorie");
             for(Categoria c: categorie) {%>
-            <div class="categoria">
-              <a href = "http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categoria?cat=<%=c.getId()%>" style = "text-decoration: none;color: #393E46" ><h2><%=c.getNome()%></h2 ></a>
-            </div >
+          <a href = "http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categoria?cat=<%=c.getId()%>" class="categoria">
+              <h2><%=c.getNome()%></h2 >
+          </a>
+
             <%}%>
         </div>
       </main>

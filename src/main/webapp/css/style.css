@@ -1,6 +1,6 @@
 /* Import del font di Google "Spartan" perché mi piace come Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
-
+/*css generale*/
 * {
     margin: 0;
     padding: 0;
@@ -146,7 +146,13 @@ body {
     display: none;
 }
 
-/*  QUESTA PARTE DEL CSS E SOLO PER IL LOG-IN  */
+main{
+    margin-top: 120px;
+}
+li.icon{
+    display: none !important;
+}
+/* CSS PER IL LOG-IN  */
 .section-logIn{
     display: flex;
     justify-content: center;
@@ -154,7 +160,6 @@ body {
     min-height: 100vh;
     width: 100%;
     background: white;
-
     background: url("https://hips.hearstapps.com/hmg-prod/images/gettyimages-1281166499.jpg");
     background-position: unset;
     background-size: cover;
@@ -261,7 +266,7 @@ button:hover {
 
 
 
-/*          AREA RISERVATA UTENTE NORMALE        */
+/* AREA RISERVATA UTENTE*/
 
 .section-user {
     background-color: #f2f2f2;
@@ -325,8 +330,7 @@ button:hover {
 }
 
 
-/*      PARTE DELLA REGISTRAZIONE   */
-
+/* CSS PER LA REGISTRAZIONE*/
 
 .section-registration {
     display: flex;
@@ -432,16 +436,13 @@ button:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-main{
-    margin-top: 120px;
-}
-
 .fieldset-custom {
     border: 1px solid #6D9886;
     border-radius: 5px;
     padding: 10px;
 }
 
+/*CSS PER LA VISUALIZZAZIONE DEI PRODOTTI*/
 .prodotti {
     display: flex;
     flex-wrap: wrap;
@@ -450,16 +451,44 @@ main{
     width: 50%;
     height: auto;
 }
+.bordo{
+    padding: 0;
+    margin: 10px;
+    border: 2px solid #393E46;
+}
 
+/*CSS PER LA VISUALIZZAZIONE DELLE CATEGORIE*/
 .categorie{
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
 }
 .categoria{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
     width: 50%;
     height: auto;
 }
+.categoria h2{
+    color: #F2E7D5;
+    text-shadow: 5px 5px 5px #000000 ;
+}
+.categorie .categoria:nth-child(1){
+    background: url("https://i.pinimg.com/564x/84/12/0f/84120f1b5c13e27175f5e90499fdfa45.jpg") no-repeat center/cover;
+}
+.categorie .categoria:nth-child(2){
+    background: url("https://i.pinimg.com/564x/ce/5e/71/ce5e714ca2b2b50780297fbdf589d1e3.jpg") no-repeat center/cover;
+}
+.categorie .categoria:nth-child(3){
+    background: url("https://i.pinimg.com/736x/8c/86/21/8c86218a70d9ebdb1c466e2ecd350b41.jpg") no-repeat center/cover;
+}
+.categorie .categoria:nth-child(4){
+    background: url("https://i.pinimg.com/564x/54/59/8c/54598c4fc3f530ea61eab5878fe2bb33.jpg") no-repeat center/cover;
+}
+
+/* CSS PER AGGIUNTA E RIMOZIONE PRODOTTI DAL CARRELLO*/
 #addToCart,#removeToCart{
     text-decoration: none;
     border: none;
@@ -476,20 +505,15 @@ main{
     color: red;
     display: none;
 }
-.bordo{
-    padding: 0;
-    margin: 10px;
-    border: 2px solid #393E46;
-}
-li.icon{
-    display: none !important;
-}
+
+/*CSS PER L'AGGIUNTA DEI PRODOTTI PER L'ADMIN*/
 #addProdotto{
     display: flex;
     justify-content: center;
     margin-top: 130px;
 }
-/*bottone torna su*/
+
+/*BOTTONE TORNA IN CIMA*/
 #scrollToTop{
     width: 30px;
     height: 30px;
@@ -506,7 +530,23 @@ li.icon{
 #scrollToTop:hover{
     transform: scale(1.2);
 }
-/*footer*/
+
+/*CSS PER IL CARRELLO*/
+.vuoto{
+    text-align: center;
+    height: 470px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.vuoto i{
+    margin-bottom: 50px;
+    font-size: 50px;
+    opacity: 0.2;
+    color: #393E46;
+}
+/*FOOTER*/
 .content{
     padding-bottom: 15rem;
 }
@@ -576,8 +616,10 @@ li.icon{
 /* PARTE RESPONSIVE*/
 
 /*smartphone*/
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 761px) {
+    /*NAVBAR RESPONSIVE*/
     #header{
+        height: 99px;
         flex-direction: row;
     }
     #navbar li:not(:last-child){
@@ -588,9 +630,6 @@ li.icon{
         padding-right:10px;
         display: block;
         padding-top: 15px;
-    }
-    main{
-        margin-top: 130px;
     }
     #navbar li.icon{
         display: block !important;
@@ -643,17 +682,92 @@ li.icon{
     .responsive li a.active {
         color: #6D9886;
     }
-
-
+    /*login responsive*/
+    .section-logIn{
+        background-position: center;
+    }
+    .form-box{
+        width: 350px;
+        height: 400px;
+    }
+    /*registrazione responsive*/
+    .section-registration{
+        align-items: center;
+        background-position: center;
+    }
+    .form-container{
+        margin: 0 25%;
+        height: auto;
+    }
+    .form-box-registration{
+        flex-direction: column;
+        width: 280px;
+    }
+    .input-box-registration{
+        height: 40px;
+        margin: 10px 0;
+        width: 260px;
+    }
+    .input-box-registration input{
+        height: 25px;
+    }
+    .form-box-registration h1{
+        line-height: 30px;
+        font-size: 1.5em;
+    }
+    .input-box-registration label{
+        font-size: 0.9em;
+    }
+    .fieldset-custom{
+        padding-top: 0;
+    }
+    .button-container{
+        padding-top: 5px;
+    }
+    /*categorie responsive*/
+    .categorie{
+        flex-direction: column;
+    }
+    .categoria{
+        width: 100%;
+        height: 25%;
+    }
+    .categoria h2{
+        font-size: 30px;
+    }
+    /*carrello responsive*/
+    .vuoto h3{
+        font-size: 15px
+    }
 }
 
 /*tablet*/
-@media screen and (min-width: 760px) and (max-width: 1023px){
+@media screen and (min-width: 761px) and (max-width: 1023px){
     .search-bar input{
         width: 150px;
     }
     #navbar li{
         padding-left:15px;
         padding-right:15px;
+    }
+    #navbar li h5{
+        display: none;
+    }
+    /*login responsive*/
+    .section-logIn{
+        background-position: center;
+    }
+    /*registrazione responsive*/
+    .form-box-registration{
+        width: 710px;
+    }
+    .form-container{
+        display: flex;
+        justify-content: center;
+        margin: 0 10%;
+    }
+    /*categotie responsive*/
+    .categoria h2{
+        font-size: 38px;
     }
 }

@@ -65,7 +65,11 @@
           <label>Prezzo: </label>
           <input type="text" name="prezzo"><br>
           <label>Categoria: </label>
-          <input type="text" name="categoria"><br>
+          <select name="categoria">
+            <c:forEach items="${categorie}" var="categoria">
+              <option value="${categoria.nome}">${categoria.nome}</option>
+            </c:forEach>
+          </select><br>
           <input type="submit" value="Aggiungi">
         </form>
       </main>

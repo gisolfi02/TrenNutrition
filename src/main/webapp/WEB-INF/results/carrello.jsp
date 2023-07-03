@@ -59,27 +59,32 @@
                 </ul>
             </navbar>
 
-            <main>
+            <main class="carrello">
               <!-- Il contenuto della pagina va qui -->
-              <%
-                Utente utente = (Utente) request.getSession().getAttribute("utente");
-              if(utente == null){%>
-               <h3>Per visualizzare il carrello <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp">accedi</a> o <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html">registrati</a></h3>
-                <%}else{
-                Carrello carrello = (Carrello) request.getSession().getAttribute("carrello");
-                List<Prodotto> prodotti = (List<Prodotto>) request.getAttribute("prodottiCarrello");
-                List<Integer> quantita = carrello.getQuantita();
-                if(prodotti != null){
-                  if(prodotti.isEmpty()){%>
-                  <h3>Il carrello &egrave vuoto, prova ad aggiungere qualcosa</h3>
+                  <%
+                    Utente utente = (Utente) request.getSession().getAttribute("utente");
+                  if(utente == null){%>
+                        <div class="vuoto">
+                           <h3>Per visualizzare il carrello <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp">accedi</a> o <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html">registrati</a></h3>
+                        </div>
+                    <%}else{
+                    Carrello carrello = (Carrello) request.getSession().getAttribute("carrello");
+                    List<Prodotto> prodotti = (List<Prodotto>) request.getAttribute("prodottiCarrello");
+                    List<Integer> quantita = carrello.getQuantita();
+                    if(prodotti != null){
+                      if(prodotti.isEmpty()){%>
+                        <div class="vuoto">
+                            <i class="fa-solid fa-cart-shopping fa-2xl"></i>
+                            <h3>Il carrello &egrave vuoto, prova ad aggiungere qualcosa</h3>
+                        </div>
                 <%}else{
                   Double totale = 0D;
                   int i = 0;
                   for(Prodotto p : prodotti){
                     totale+=p.getPrezzo()*quantita.get(i);%>
                 <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=<%=p.getId()%>" style="text-decoration: none">
-                    <div style="color: #393E46">
                     <img src="img/<%=p.getNome()%><%=p.getId()%>.jpg">
+                    <div style="color: #393E46">
                     <h3><%=p.getNome()%></h3>
                     <h6><%=p.getPrezzo()%>€</h6>
                     <h6>Quantità:<%=quantita.get(i)%></h6>
