@@ -532,6 +532,10 @@ button:hover {
 }
 
 /*CSS PER IL CARRELLO*/
+.carrello{
+    margin-top:130px;
+    display: flex;
+}
 .vuoto{
     text-align: center;
     height: 470px;
@@ -546,6 +550,94 @@ button:hover {
     opacity: 0.2;
     color: #393E46;
 }
+
+.prodotticarello{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.prodotticarello h3{
+    text-align: center;
+    color: #393E46;
+}
+.info{
+    margin-left: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    color: #393E46;
+}
+.checkout{
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
+    justify-content: space-between;
+    height: 80px;
+    background: #EBEBEB;
+    border: 4px solid #6D9886;
+    padding: 10px;
+}
+.checkout form .button-container button{
+    padding: 0 10px;
+    width: 100%;
+}
+#checkoutIcona {
+    display: none;
+}
+/*CSS PER LA VISUALIZZAZIONE DELL'ORDINE*/
+.ordine{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.ordine h1{
+    font-size: 30px;
+}
+.cornice{
+    width: 225px;
+    border: 2px solid #393E46;
+    margin: 10px;
+}
+.prodottiordine{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.prodottiordine h3{
+    text-align: center;
+    color: #393E46;
+}
+.prodottiordine .info{
+    margin-right: 5px;
+}
+.riepilogo{
+    margin: 50px;
+    width: 260px;
+    background: #EBEBEB;
+    border: 4px solid #6D9886;
+    padding: 10px;
+    text-align: center;
+}
+/*CSS PER LA VISUALIZZAZIONE DI TUTTI GLI ORDINI*/
+.ordini{
+    display: flex;
+    flex-wrap: wrap;
+}
+.ordini .cornice{
+    line-height: 50px;
+    text-align: center;
+}
+.ordini .cornice h6{
+    color: #393E46;
+}
+.cornice:hover{
+    border-color: #6D9886;
+}
+
 /*FOOTER*/
 .content{
     padding-bottom: 15rem;
@@ -587,7 +679,7 @@ button:hover {
     text-align:center;
     padding-bottom:25px;
 }
-.footer .social > a{
+.social a{
     font-size:24px;
     width:40px;
     height:40px;
@@ -739,6 +831,31 @@ button:hover {
     .vuoto h3{
         font-size: 15px
     }
+    .carrello{
+        margin-top: 130px;
+        margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .checkout h4{
+        font-size: 15px;
+    }
+    .checkout{
+        width: 140px;
+        justify-content: center;
+        height: 50px;
+    }
+    #checkoutIcona{
+        display: inline !important;
+    }
+    #checkoutTesto{
+        display: none;
+    }
+    .checkout form .button-container{
+        margin: 0;
+    }
+
 }
 
 /*tablet*/
@@ -766,8 +883,26 @@ button:hover {
         justify-content: center;
         margin: 0 10%;
     }
-    /*categotie responsive*/
+    /*categotrie responsive*/
     .categoria h2{
         font-size: 38px;
+    }
+    /*carrello responsive*/
+    .checkout h4{
+        font-size: 15px;
+    }
+    .checkout{
+        width: 200px;
+        justify-content: center;
+        height: 50px;
+    }
+    #checkoutIcona{
+        display: inline !important;
+    }
+    #checkoutTesto{
+        display: none;
+    }
+    .checkout form .button-container{
+        margin: 0;
     }
 }

@@ -26,6 +26,8 @@
             alert("Email non valida")
           })
           return false;
+        }else {
+          $(".input-box-registration #email").css("border-bottom","2px solid green")
         }
 
         if (!passwordPattern.test(password)) {
@@ -34,6 +36,8 @@
             alert("La password deve contenere almeno 1 numero, 1 carattere maiuscolo, 1 minuscolo, 1 carattere non alfanumerico e non deve contenere spazi");
           })
           return false;
+        }else {
+          $(".input-box-registration #email").css("border-bottom","2px solid green")
         }
 
         return true;
@@ -59,6 +63,7 @@
               })
               return false
             }else {
+              $(".input-box-registration #email").css("border-bottom","2px solid green")
               return true;
             }
           }
