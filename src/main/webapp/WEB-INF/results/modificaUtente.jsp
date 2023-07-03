@@ -57,18 +57,31 @@
 
       <main>
         <!-- Il contenuto della pagina va qui -->
-        <form action="UpdateUtente" method="post" autocomplete="off">
-          <label><b>Nome</b></label><br>
-          <input type="text" name="nome" value="${modifica.nome}"><br>
-          <label><b>Cognome</b></label><br>
-          <input type="text" name="cognome" value="${modifica.cognome}"><br>
-          <label><b>Username</b></label><br>
-          <input type="text" name="username" value="${modifica.username}"><br>
-          <label><b>Telefono</b></label><br>
-          <input type="number" name="telefono" value="${modifica.telefono}"><br>
-          <input type="hidden" name="id" value="${modifica.id}">
-          <input type="submit" value="Aggiorna">
-        </form>
+        <section class="section-Modifica">
+          <div class="form-box-Modifica">
+            <form action="UpdateUtente" method="post" autocomplete="off">
+              <h1>Dati da modificare</h1>
+              <div class="input-box">
+                <label><b>Nome</b></label>
+                <input type="text" name="nome" value="${modifica.nome}">
+              </div>
+              <div class="input-box">
+                <label><b>Cognome</b></label>
+                <input type="text" name="cognome" value="${modifica.cognome}">
+              </div>
+              <div class="input-box">
+                <label><b>Username</b></label>
+                <input type="text" name="username" value="${modifica.username}">
+              </div>
+              <div class="input-box">
+                <label><b>Telefono</b></label>
+                <input type="number" name="telefono" value="${modifica.telefono}">
+              </div>
+              <input type="hidden" name="id" value="${modifica.id}">
+              <button type="submit" class="login-button" value="Aggiorna">Aggiorna</button>
+            </form>
+          </div>
+        </section>
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
     </div>

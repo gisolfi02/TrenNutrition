@@ -54,16 +54,23 @@
             </navbar>
 
             <main>
-                <h2 style="text-align: center">Tren Nutrition</h2>
-                <p>Ciao a tutti, ci presentiamo, noi siamo Andrea e Antonio, i creatori di Tren Nutrition.<br> Siamo due studenti dell'università di Salerno che hanno
-                realizzato questo sito per tutti coloro, come noi, sono appassionati di palestra e cercano i giusti integratori per poter aumentare la propria massa muscolare e forza.<br>Tren nutrition
-                offre prodotti di ottima qualità provenienti dai migliori fornitori del settore come "Prozis" e "Bulk". L'idea nasce per evitare di dover perdere ore e ore a navigare sul web alla ricerca del giusto integratore.
-                Qui su TrenNutrition li potrete trovare tutti, basta cercare. Quindi, cosa aspetti, corri a comprare i tuoi integratori!</p>
+                <section>
+                    <div class="colonne">
+                        <img src="https://powerhousenutrition.it/wp-content/uploads/2021/03/integratori-alimentari-powerhouse-nutrition.jpg" alt="Immagine Chi siamo">
+                        <div>
+                            <h2 style="text-align: center">Tren Nutrition</h2>
+                            <p>Ciao a tutti, ci presentiamo, noi siamo Andrea e Antonio, i creatori di Tren Nutrition.<br> Siamo due studenti dell'università di Salerno che hanno
+                            realizzato questo sito per tutti coloro, come noi, sono appassionati di palestra e cercano i giusti integratori per poter aumentare la propria massa muscolare e forza.<br>Tren nutrition
+                            offre prodotti di ottima qualità provenienti dai migliori fornitori del settore come "Prozis" e "Bulk". L'idea nasce per evitare di dover perdere ore e ore a navigare sul web alla ricerca del giusto integratore.
+                            Qui su TrenNutrition li potrete trovare tutti, basta cercare. Quindi, cosa aspetti, corri a comprare i tuoi integratori!</p>
+                        </div>
+                    </div>
+                </section>
             </main>
             <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
         </div>
         <footer class="footer">
-            <div class="social"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-facebook-f"></i></a></div>
+            <div class="social"><a href=""><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-facebook-f"></i></a></div>
             <ul>
                 <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
                 <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
