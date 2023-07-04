@@ -71,7 +71,7 @@
                     <c:when test="${!utente.admin}">
                       <div class="dati">
                         <label>${prodotto.prezzo}€</label>
-                        <label>Quantità:</label>
+                        <label id="quantita">Quantità:</label>
                         <select name="quantita">
                           <option value="1">1</option>
                           <option value="2">2</option>
