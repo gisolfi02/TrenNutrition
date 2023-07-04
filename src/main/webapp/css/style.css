@@ -147,7 +147,7 @@ body {
 }
 
 main{
-    margin-top: 120px;
+    margin-top: 130px;
 }
 li.icon{
     display: none !important;
@@ -444,6 +444,7 @@ button:hover {
 
 /*CSS PER LA VISUALIZZAZIONE DEI PRODOTTI*/
 .prodotti {
+    margin: 10px 33px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -453,9 +454,10 @@ button:hover {
 }
 .bordo{
     padding: 0;
-    margin: 10px;
+    margin: 2px;
     border: 2px solid #6D9886;
-
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 /*CSS PER LA VISUALIZZAZIONE DELLE CATEGORIE*/
