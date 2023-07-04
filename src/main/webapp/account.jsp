@@ -29,6 +29,7 @@
                         <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
                         <c:choose>
                             <c:when test="${!empty utente && utente.admin}">
+
                                 <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/utenti">Utenti</a></li>
                             </c:when>
                             <c:otherwise>

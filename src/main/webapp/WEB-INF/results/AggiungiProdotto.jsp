@@ -12,7 +12,15 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>Tren Nutrition</title>
     <script src="js/codici.js"></script>
-
+    <script>
+      function photoPreview() {
+        let img = document.getElementById("preview");
+        let file = document.getElementById("file");
+        if (file.files[0]) {
+          img.src = URL.createObjectURL(file.files[0])
+        }
+      }
+    </script>
   </head>
   <body>
     <div class="content">

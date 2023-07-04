@@ -29,3 +29,9 @@ $(function (){
         $("html, body").animate({scrollTop:0},700)
     })
 })
+
+function css(){
+    $(".aggiungi").css("border","none");
+    $(".aggiungi").css("line-height","30px");
+    $(".dati").css("text-align","center");
+}

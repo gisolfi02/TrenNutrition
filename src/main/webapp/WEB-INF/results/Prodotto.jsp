@@ -57,38 +57,61 @@
 
       <main>
         <!-- Il contenuto della pagina va qui -->
-        <img src="img/${prodotto.nome}${prodotto.id}.jpg" style="float: left">
-        <h1>${prodotto.nome}</h1><br>
-        <h5>${prodotto.descrizione}</h5><br>
-        <form action="Aggiungi" method="post">
-          <input type="hidden" name="id" value="${prodotto.id}">
-          <label>${prodotto.prezzo}€</label><br>
-          <label>Quantità:</label>
-          <select name="quantita">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-          </select>
-          <button type="submit" id="addToCart"><i class="fas fa-shopping-cart" style="color: #393E46;"></i></button>
-        </form>
-        <c:if test="${richiesta == 0}">
-          <script>
-            $(function(){
-              $("#accedi").fadeIn();
-            })
-          </script>
-        </c:if>
-        <c:if test="${aggiunta == 1}">
-          <script>
-            $(function(){
-              $("#aggiunto").fadeIn();
-            })
-          </script>
-        </c:if>
-        <p id="accedi">Per aggiungere il prodotto al carrello <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp">accedi</a> o <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html">registrati</a></p>
-        <p id="aggiunto" >Prodotto aggiunto al carrello</p>
+        <div class="visualizza">
+          <img src="img/${prodotto.nome}${prodotto.id}.jpg" style="float: left">
+          <div class="descrizione">
+            <h1>${prodotto.nome}</h1>
+            <h5>${prodotto.descrizione}</h5>
+          </div>
+          <div class="contenuto">
+            <div class="aggiungi">
+              <form action="option" method="post">
+                <input type="hidden" name="id" value="${prodotto.id}">
+                  <c:choose>
+                    <c:when test="${!utente.admin}">
+                      <div class="dati">
+                        <label>${prodotto.prezzo}€</label>
+                        <label>Quantità:</label>
+                        <select name="quantita">
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                        </select>
+                      </div>
+                      <button type="submit" name="option" value="aggiungi" id="addToCart"><span>Aggiungi Al carrello  </span><i class="fas fa-shopping-cart" style="color: #393E46;"></i></button>
+                    </c:when>
+                  <c:otherwise>
+                    <script>
+                      css()
+                    </script>
+                    <div class="dati">
+                      <label>${prodotto.prezzo}€</label>
+                    </div>
+                    <button id="rimuovi" type="submit" name="option" value="rimuovi"><span>Rimuovi Prodotto  </span><i class="fa-solid fa-x"></i></button>
+                  </c:otherwise>
+                </c:choose>
+              </form>
+              <c:if test="${richiesta == 0}">
+                <script>
+                  $(function(){
+                    $("#accedi").fadeIn();
+                  })
+                </script>
+              </c:if>
+              <c:if test="${aggiunta == 1}">
+                <script>
+                  $(function(){
+                    $("#aggiunto").fadeIn();
+                  })
+                </script>
+              </c:if>
+            </div>
+            <p id="accedi">Per aggiungere il prodotto al carrello <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/account.jsp">accedi</a> o <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/registrazione.html">registrati</a></p>
+            <p id="aggiunto" >Prodotto aggiunto al carrello</p>
+          </div>
+        </div>
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
     </div>

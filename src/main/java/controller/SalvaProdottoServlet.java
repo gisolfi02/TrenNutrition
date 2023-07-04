@@ -50,7 +50,7 @@ public class SalvaProdottoServlet extends HttpServlet {
         InputStream fileInputStream = filePart.getInputStream();
         Files.copy(fileInputStream,pathDestinazione);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("index.html");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("account.jsp");
         dispatcher.forward(request,response);
     }
     public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException, IOException {
