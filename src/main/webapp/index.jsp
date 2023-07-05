@@ -71,7 +71,11 @@
             <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
         </div>
         <footer class="footer">
-            <div class="social"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-facebook-f"></i></a></div>
+            <div class="social">
+                <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+                <a href="https://it-it.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
             <ul>
                 <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
                 <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
