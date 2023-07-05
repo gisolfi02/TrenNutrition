@@ -155,11 +155,16 @@ li.icon{
 
 .banner {
     position: relative;
-    display: inline-block;
+    display: none;
     width: 100%;
     height: 60vh; /* Imposta l'altezza al 60% dell'altezza della viewport */
     overflow: hidden; /* Nasconde il contenuto extra dell'immagine che supera l'altezza specificata */
 }
+
+.banner.active {
+    display: block;
+}
+
 
 .banner-image {
     top: 0;
@@ -167,7 +172,7 @@ li.icon{
     width: 100%;
     height: 100%;
     filter: brightness(70%);
-    object-fit: cover /* Ridimensiona l'immagine per coprire tutto il contenitore */
+    object-fit: cover;/* Ridimensiona l'immagine per coprire tutto il contenitore */
 }
 
 .banner-text h1{
@@ -182,6 +187,7 @@ li.icon{
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
+
 
 
 /* CSS PER IL LOG-IN  */

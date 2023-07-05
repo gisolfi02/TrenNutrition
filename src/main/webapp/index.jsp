@@ -67,10 +67,43 @@
             </navbar>
             <main>
                 <!-- Il contenuto della pagina va qui -->
-                <div class="banner">
+
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var banners = document.getElementsByClassName("banner");
+                        var currentIndex = 0;
+                        var interval = 5000; // Tempo di visualizzazione di ogni immagine (in millisecondi)
+
+                        function showNextBanner() {
+                            // Nascondi il banner corrente
+                            banners[currentIndex].classList.remove("active");
+
+                            currentIndex = (currentIndex + 1) % banners.length;
+
+                            // Mostra il prossimo banner
+                            banners[currentIndex].classList.add("active");
+                        }
+
+                        // Mostra il primo banner
+                        banners[currentIndex].classList.add("active");
+
+                        // Mostra i banner in sequenza
+                        setInterval(showNextBanner, interval);
+                    });
+                </script>
+
+                <div class="banner" >
                     <img src="https://cdn.shopify.com/s/files/1/0303/1135/0365/files/MAPLEWAFFLE.png?v=1688142267" class="banner-image">
-                    <div class="banner-text"><h1>Yeah buddy, light weight baby</h1></div>
+                    <div class="banner-text"><h1>Yeah buddy, light weight baby!</h1></div>
                 </div>
+
+                <div class="banner">
+                    <img src="https://cdn.shopify.com/s/files/1/0303/1135/0365/files/beta.png?v=1688160233" class="banner-image">
+                    <div class="banner-text"><h1>Now five more reps!</h1></div>
+                </div>
+
+
+
                 <!-- Carico tutti i prodotti dal server -->
                 <div class="prodotti">
                     <c:forEach var="prodotto" items="${prodotti}" varStatus="status">
