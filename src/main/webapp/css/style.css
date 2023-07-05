@@ -504,7 +504,7 @@ button:hover {
 }
 /*CSS PER LA VISUALIZZAZIONE DELLE CATEGORIE*/
 .categorie{
-    height: 500px;
+    height: 560px;
     display: flex;
     flex-wrap: wrap;
     padding: 0;
@@ -1128,6 +1128,21 @@ button:hover {
     margin: 0;
     font-size: 12px;
 }
+/*CSS RICERCA VUOTA*/
+.ricercaVuota{
+    color: #393E46;
+    text-align: center;
+}
+.ricercaVuota i{
+    opacity: 0.8;
+    padding: 20px;
+    font-size: 70px;}
+.ricercaVuota h3{
+    font-size: 30px;
+
+}
+
+
 /* PARTE RESPONSIVE*/
 
 /*smartphone*/
@@ -1243,7 +1258,7 @@ button:hover {
     }
     /*categorie responsive*/
     .categorie{
-        height: 500px;
+        height: 800px;
         flex-direction: column;
     }
     .categoria{
@@ -1368,7 +1383,7 @@ button:hover {
 
     /*categotrie responsive*/
     .categorie{
-        height: 900px;
+        height: 1130px;
     }
     .categoria h2{
         font-size: 38px;
