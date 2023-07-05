@@ -64,8 +64,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    background: #F2E7D5;
     position: fixed;
+    background-color: white;
     top: 0;
     left: 0;
     right: 0;
@@ -499,7 +499,9 @@ button:hover {
     border-radius: 15px;
     overflow: hidden;
 }
-
+.bordo a h3,p{
+    padding-left: 5px;
+}
 /*CSS PER LA VISUALIZZAZIONE DELLE CATEGORIE*/
 .categorie{
     height: 500px;
@@ -716,23 +718,8 @@ button:hover {
 .ordine h1{
     font-size: 30px;
 }
-.cornice{
-    width: 225px;
-    border: 2px solid #393E46;
-    margin: 10px;
-}
-.prodottiordine{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.prodottiordine h3{
-    text-align: center;
-    color: #393E46;
-}
-.prodottiordine .info{
-    margin-right: 5px;
+.ordine .prodotti .bordo h3,.info{
+    padding: 0 7px;
 }
 .riepilogo{
     margin: 50px;
@@ -746,6 +733,12 @@ button:hover {
 .ordini{
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
+}
+.cornice{
+    width: 225px;
+    border: 2px solid #393E46;
+    margin: 10px;
 }
 .ordini .cornice{
     line-height: 50px;
@@ -1077,7 +1070,7 @@ button:hover {
     flex-direction: row;
 }
 .spedizione .carta:nth-child(1) .informazioni:nth-child(2){
-    width: 30px;
+    width: 33px;
     padding-left: 50px;
 }
 .spedizione .carta:nth-child(2) .informazioni:nth-child(1){

@@ -66,8 +66,8 @@
               </div>
               <%}else {%>
             <div class="ordini">
+              <%for(Ordine o : ordini){%>
               <div class="cornice">
-                  <%for(Ordine o : ordini){%>
                 <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizzaordine?num=<%=o.getNumeroOrdine()%>" style="text-decoration: none">
                   <div>
                     <h4>Ordine Numero: <%=o.getNumeroOrdine()%></h4>
@@ -75,9 +75,9 @@
                   </div>
                 </a>
               </div>
+                <%}%>
             </div>
-                <%}
-              }
+              <%}
             }else {%>
               <h2>Non hai ancora effettuato ordini</h2>
             <%}%>
