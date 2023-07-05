@@ -53,19 +53,25 @@
             </navbar>
             <main>
                 <!-- Il contenuto della pagina va qui -->
+                <div class="banner">
+                    <img src="https://cdn.shopify.com/s/files/1/0303/1135/0365/files/MAPLEWAFFLE.png?v=1688142267" class="banner-image">
+                    <div class="banner-text"><h1>Yeah buddy, light weight baby</h1></div>
+                </div>
                 <!-- Carico tutti i prodotti dal server -->
                 <div class="prodotti">
-                <c:forEach items="${prodotti}" var="prodotto">
-                    <div class="bordo" >
-                        <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
-                            <div class="prodotto">
-                                <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
+                    <c:forEach var="prodotto" items="${prodotti}" varStatus="status">
+                        <c:if test="${status.index < 4}">
+                            <div class="bordo">
+                                <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
+                                    <div class="prodotto">
+                                        <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
+                                    </div>
+                                    <h3 style="color: black">${prodotto.nome}</h3>
+                                    <p style="color: #393E46">${prodotto.prezzo}€</p>
+                                </a>
                             </div>
-                            <h3 style="color: black">${prodotto.nome}</h3>
-                            <p style="color: #393E46">${prodotto.prezzo}€</p>
-                        </a>
-                    </div>
-                </c:forEach>
+                        </c:if>
+                    </c:forEach>
                 </div>
             </main>
             <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
