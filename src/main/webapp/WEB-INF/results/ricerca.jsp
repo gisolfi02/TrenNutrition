@@ -62,7 +62,10 @@
         <div class="prodotti">
           <c:choose>
             <c:when test="${empty ricerca || ricerca == null}">
-              <h3>La tua ricerca non ha prodotti</h3>
+              <div class="ricercaVuota">
+                <i class="fa-regular fa-face-frown"></i>
+                <h3>La tua ricerca non ha prodotto risultati</h3>
+              </div>
             </c:when>
             <c:otherwise>
               <c:forEach items="${ricerca}" var="prodotto">
