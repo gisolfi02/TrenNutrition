@@ -64,7 +64,6 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    background: #F2E7D5;
     position: fixed;
     top: 0;
     left: 0;
@@ -460,7 +459,9 @@ button:hover {
     border-radius: 15px;
     overflow: hidden;
 }
-
+.bordo a h3,p{
+    padding-left: 5px;
+}
 /*CSS PER LA VISUALIZZAZIONE DELLE CATEGORIE*/
 .categorie{
     height: 500px;
