@@ -63,29 +63,49 @@
       </navbar>
 
       <main id="addProdotto">
-        <form method="post" action = "SaveProdotto" enctype="multipart/form-data" autocomplete="off" >
-          <img src="img/noImage.png" id="preview"><br>
-          <input type="file" name="file" onchange="photoPreview()" id="file"><br>
-          <label>Nome Prodotto: </label>
-          <input type="text" name="nome"><br>
-          <label>Descrizione: </label><br>
-          <textarea cols="40" rows="10" name="descrizione" style="resize: none"></textarea><br>
-          <label>Prezzo: </label>
-          <input type="text" name="prezzo"><br>
-          <label>Categoria: </label>
-          <select name="categoria">
-            <c:forEach items="${categorie}" var="categoria">
-              <option value="${categoria.nome}">${categoria.nome}</option>
-            </c:forEach>
-          </select><br>
-          <input type="submit" value="Aggiungi">
-        </form>
+        <div class="aggiungiProdotto">
+          <form method="post" action = "SaveProdotto" enctype="multipart/form-data" autocomplete="off" >
+            <h3>Nuovo Prodotto</h3>
+            <div class="preview">
+              <img src="img/noImage.png" id="preview">
+              <input type="file" name="file" onchange="photoPreview()" id="file">
+              <label for="file"><i class="fa-regular fa-image"></i> Seleziona un'immagine</label>
+            </div>
+            <div class="input">
+              <label>Nome Prodotto: </label>
+              <input type="text" name="nome">
+            </div>
+            <div class="input">
+              <label>Descrizione: </label>
+              <textarea cols="40" rows="10" name="descrizione" style="resize: none"></textarea>
+            </div>
+            <div class="input">
+              <label>Prezzo: </label>
+              <input type="text" name="prezzo">
+            </div>
+            <div class="input">
+            <label>Categoria: </label>
+            <select name="categoria">
+              <c:forEach items="${categorie}" var="categoria">
+                <option value="${categoria.nome}">${categoria.nome}</option>
+              </c:forEach>
+            </select>
+            </div>
+            <div class="button-container">
+            <button type="submit" value="Aggiungi">Aggiungi</button>
+            </div>
+          </form>
+        </div>
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
     </div>
 
     <footer class="footer">
-      <div class="social"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-twitter"></i></a><a href="#"><i class="fa-brands fa-facebook-f"></i></a></div>
+      <div class="social">
+        <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://twitter.com"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://it-it.facebook.com"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
       <ul>
         <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/">Home</a></li>
         <li><a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/categorie.jsp">Prodotti</a></li>
