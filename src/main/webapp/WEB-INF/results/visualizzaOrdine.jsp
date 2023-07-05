@@ -71,15 +71,15 @@
           int i = 0;%>
         <div class="ordine">
           <h1>Riepilogo Ordine N: <%=ordine.getNumeroOrdine()%></h1>
-          <div class="prodottiordine">
+          <div class="prodotti">
             <%
             for(Prodotto p : prodotti){%>
-              <div class="cornice">
+              <div class="bordo">
                 <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=<%=p.getId()%>" style="text-decoration: none"><img src="img/<%=p.getNome()%><%=p.getId()%>.jpg"></a>
                 <h3><%=p.getNome()%></h3>
                 <div class="info">
                   <h6><%=p.getPrezzo()%>€</h6>
-                  <h6>Quantità:<%=quantita.get(i)%></h6>
+                  <h6>Quantità: <%=quantita.get(i)%></h6>
                 </div>
               </div>
 
