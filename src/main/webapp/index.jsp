@@ -12,20 +12,6 @@
         <link rel="stylesheet" href="css/style.css" type="text/css">
         <title>Tren Nutrition</title>
         <script src="js/codici.js"></script>
-        <script>
-            $(function () {
-                $("#header").css("background","transparent")
-            })
-            $(function (){
-                window.onscroll= function (){
-                    if(document.documentElement.scrollTop > 10){
-                        $("#header").css("background", "white");
-                    }else {
-                        $("#header").css("background","transparent")
-                    }
-                }
-            })
-        </script>
     </head>
     <body>
         <div class="content">

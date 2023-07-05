@@ -60,17 +60,24 @@
         <!-- Il contenuto della pagina va qui -->
         <!-- Carico tutti i prodotti dal server -->
         <div class="prodotti">
-          <c:forEach items="${ricerca}" var="prodotto">
-            <div class="bordo">
-            <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
-              <div class="prodotto">
-                <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
-              </div>
-              <h3 style="color: black">${prodotto.nome}</h3>
-              <p style="color: #393E46">${prodotto.prezzo}€</p>
-            </a>
-            </div>
-          </c:forEach>
+          <c:choose>
+            <c:when test="${empty ricerca || ricerca == null}">
+              <h3>La tua ricerca non ha prodotti</h3>
+            </c:when>
+            <c:otherwise>
+              <c:forEach items="${ricerca}" var="prodotto">
+                <div class="bordo">
+                <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=${prodotto.id}" style="text-decoration: none">
+                  <div class="prodotto">
+                    <img src="img/${prodotto.nome}${prodotto.id}.jpg"><br>
+                  </div>
+                  <h3 style="color: black">${prodotto.nome}</h3>
+                  <p style="color: #393E46">${prodotto.prezzo}€</p>
+                </a>
+                </div>
+              </c:forEach>
+            </c:otherwise>
+          </c:choose>
         </div>
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
