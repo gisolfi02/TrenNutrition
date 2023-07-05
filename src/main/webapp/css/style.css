@@ -1077,6 +1077,51 @@ button:hover {
 .confirm form > .informazioni label{
     font-size: 30px;
 }
+
+/*CC CONFERMA ORDINE*/
+#riepilogo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+}
+.orderConfermato h2{
+    border-bottom: 2px solid #6D9886
+}
+.orderConfermato label{
+    color: #393E46;
+    font-size: 20px
+}
+.orderConfermato a .button-container{
+    width: 200px;
+}
+.orderConfermato a .button-container button{
+    width: 100%;
+}
+
+/*CSS ERRORE*/
+#error{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.error{
+    text-align: center;
+}
+.error i{
+    font-size: 60px;
+    margin-bottom: 20px;
+    color: red;
+    opacity: 0.7;
+}
+.error h3{
+    font-size: 30px;
+    color: #393E46
+}
+.error p{
+    margin: 0;
+    font-size: 12px;
+}
 /* PARTE RESPONSIVE*/
 
 /*smartphone*/
@@ -1174,6 +1219,8 @@ button:hover {
     }
     .input-box-registration input{
         height: 25px;
+        width: 100%;
+        padding-right: 0;
     }
     .form-box-registration h1{
         line-height: 30px;
@@ -1312,6 +1359,7 @@ button:hover {
         justify-content: center;
         margin: 0 10%;
     }
+
     /*categotrie responsive*/
     .categorie{
         height: 900px;

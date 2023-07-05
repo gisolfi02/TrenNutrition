@@ -54,12 +54,14 @@
         </ul>
       </navbar>
 
-      <main>
+      <main id="riepilogo">
         <!-- Il contenuto della pagina va qui -->
-        <h2>Ordine confermato!</h2>
-        <label>Numero ordine: ${ordine.numeroOrdine}</label><br>
-        <label>Totale: ${ordine.totale}</label><br>
-        <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><button>Torna alla home</button></a>
+        <div class="orderConfermato">
+          <h2>Ordine confermato!</h2>
+          <label>Numero ordine: ${ordine.numeroOrdine}</label><br>
+          <label>Totale: ${ordine.totale}</label><br>
+          <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/"><div class="button-container"><button>Torna alla home <i class="fa-solid fa-house"></i></button></div></a>
+        </div>
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
     </div>

@@ -13,7 +13,24 @@
     <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>Tren Nutrition</title>
     <script src="js/codici.js"></script>
+    <script>
+      function validateForm(){
+        let email = document.getElementById("email").value;
+        let emailPattern = /^([a-z0-9_\.-]+@[a-z\d\.-]+\.[a-z\.]{2,6})$/;
 
+        if (!emailPattern.test(email)) {
+          $(function(){
+            $(" #email").css("border-bottom","2px solid #ff0000")
+            alert("Email non valida")
+          })
+          return false;
+        }else {
+          $(".input-box-registration #email").css("border-bottom","2px solid green")
+          return true;
+        }
+      }
+
+    </script>
   </head>
   <body>
     <div class="content">
@@ -57,30 +74,55 @@
 
 
       <main>
-        <!-- Il contenuto della pagina va qui -->
-        <form onsubmit="return validateForm()" action="SalvaModifiche" method="post" autocomplete="off">
-          <label><b>Nome</b></label><br>
-          <input type="text" name="nome" value="${utente.nome}"><br>
-          <label><b>Cognome</b></label>
-          <input type="text" name="cognome" value="${utente.cognome}"><br>
-          <label><b>Username</b></label>
-          <input type="text" name="username" value="${utente.username}"><br>
-          <label><b>Email</b></label>
-          <input type="email" name="email" id="email" value="${utente.email}" style="width: 250px"><br>
-          <label><b>Telefono</b></label>
-          <input type="text" name="telefono" value="${utente.telefono}"><br>
-          <fieldset>
-              <legend><b>Indirizzo</b></legend>
-              <label><b>Via</b></label>
-              <input type="text" name="via" value="${utente.via}"><br>
-              <label><b>N. Civico</b></label>
-              <input type="text" name="civico" value="${utente.ncivico}"><br>
-              <label><b>CAP</b></label>
-              <input type="text" name="cap" value="${utente.CAP}"><br>
-          </fieldset>
-          <input type="hidden" name ="id" value="${utente.id}">
-          <input type="submit" value="Salva Modifiche">
-        </form>
+       <section class="section-registration">
+         <div class="form-box-registration">
+            <form onsubmit="return validateForm()" action="SalvaModifiche" method="post" autocomplete="off">
+              <div class="left-div">
+                <div class="input-box-registration">
+                  <label><b>Nome</b></label>
+                  <input type="text" name="nome" value="${utente.nome}">
+                </div>
+                <div class="input-box-registration">
+                  <label><b>Cognome</b></label>
+                  <input type="text" name="cognome" value="${utente.cognome}">
+                </div>
+                <div class="input-box-registration">
+                  <label><b>Username</b></label>
+                  <input type="text" name="username" value="${utente.username}">
+                </div>
+                <div class="input-box-registration">
+                  <label><b>Email</b></label>
+                  <input type="email" name="email" id="email" value="${utente.email}">
+                </div>
+                <div class="input-box-registration">
+                  <label><b>Telefono</b></label>
+                  <input type="text" name="telefono" value="${utente.telefono}">
+                </div>
+              </div>
+              <div class="right-div">
+                <fieldset class="fieldset-custom">
+                    <legend><b>Indirizzo</b></legend>
+                  <div class="input-box-registration">
+                    <label><b>Via</b></label>
+                    <input type="text" name="via" value="${utente.via}">
+                  </div>
+                  <div class="input-box-registration">
+                    <label><b>N. Civico</b></label>
+                    <input type="text" name="civico" value="${utente.ncivico}">
+                  </div>
+                  <div class="input-box-registration">
+                    <label><b>CAP</b></label>
+                    <input type="text" name="cap" value="${utente.CAP}">
+                  </div>
+                </fieldset>
+              </div>
+              <input type="hidden" name ="id" value="${utente.id}">
+              <div class="button-container">
+                <button type="submit">Salva Modifiche</button>
+              </div>
+            </form>
+         </div>
+       </section>
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
     </div>

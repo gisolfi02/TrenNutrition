@@ -55,7 +55,6 @@
       </navbar>
 
       <main>
-        <h4>I risultati della ricerca per la categoria "${categoria.nome}" sono:</h4>
         <div class="prodotti">
           <c:forEach items="${prodotticategoria}" var="prodotto">
             <div class="bordo">
