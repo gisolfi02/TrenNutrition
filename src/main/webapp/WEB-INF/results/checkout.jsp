@@ -54,35 +54,56 @@
         </ul>
       </navbar>
 
-      <main>
-        <!--ci sono i br, levali--->
-        <form method="post" onsubmit="return validateCard()" action="ordine" autocomplete="off">
-          <fieldset>
-            <legend>Spedizione</legend>
-            <label>Via: </label>
-            <input type="text" value="${utente.via}" required><br>
-            <label>N. Civico: </label>
-            <input type="text" value="${utente.ncivico}" required><br>
-            <label>CAP: </label>
-            <input type="text" value="${utente.CAP}" required><br>
-          </fieldset>
-          <fieldset>
-            <legend>Pagamento</legend>
-            <label>Numero Carta: </label>
-            <i class="far fa-credit-card"></i>
-            <input type="text" placeholder="0000 0000 0000 0000" id="card" required><br>
-            <label>Nome sulla carta: </label>
-            <input type="text">
-            <label>Scadenza: </label>
-            <input type="text" placeholder="00/00">
-            <label>CVC: </label>
-            <input type="text" placeholder="123">
-          </fieldset><br>
-          <label> Totale: ${totale}€</label>
-          <input type="hidden" name = "totale" value="${totale}">
-          <input type="submit" value="Conferma Ordine">
-        </form>
-
+      <main id="checkout">
+        <div class="confirm">
+          <form method="post" onsubmit="return validateCard()" action="ordine" autocomplete="off">
+            <h3><i class="fa-solid fa-truck-fast"></i> Informazioni sulla spedizione</h3>
+            <div class="spedizione">
+              <div class="informazioni">
+                <label>Via </label>
+                <input type="text" value="${utente.via}" required>
+              </div>
+              <div class="informazioni">
+                <label>N. Civico </label>
+                <input type="text" value="${utente.ncivico}" required>
+              </div>
+              <div class="informazioni">
+                <label>CAP </label>
+                <input type="text" value="${utente.CAP}" required>
+              </div>
+            </div>
+            <h3><i class="far fa-credit-card"></i> Pagamento</h3>
+            <div class="spedizione">
+              <div class="carta">
+                <div class="informazioni">
+                  <label>Numero Carta </label>
+                  <input type="text" placeholder="0000 0000 0000 0000" id="card" required>
+                </div>
+                <div class="informazioni">
+                  <label>CVC </label>
+                  <input type="text" placeholder="123">
+                </div>
+              </div>
+              <div class=" carta">
+                <div class="informazioni">
+                <label>Scadenza </label>
+                <input type="text" placeholder="00/00">
+              </div>
+                <div class="informazioni">
+                  <label>Nome sulla carta </label>
+                  <input type="text">
+                </div>
+              </div>
+            </div>
+            <div class="informazioni">
+              <label> <b>Totale: ${totale}€</b></label>
+            <input type="hidden" name = "totale" value="${totale}">
+            <div class="button-container">
+              <button type="submit" value="Conferma Ordine">Conferma Ordine</button>
+            </div>
+            </div>
+          </form>
+        </div>
         <script type="text/javascript">
           function validateCard(){
             let card = document.getElementById("card").value
