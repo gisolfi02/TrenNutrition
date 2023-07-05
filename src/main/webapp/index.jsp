@@ -19,7 +19,7 @@
             $(function (){
                 window.onscroll= function (){
                     if(document.documentElement.scrollTop > 10){
-                        $("#header").css("background", "#F2E7D5")
+                        $("#header").css("background", "white");
                     }else {
                         $("#header").css("background","transparent")
                     }
