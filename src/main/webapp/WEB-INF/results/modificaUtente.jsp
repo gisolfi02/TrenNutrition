@@ -59,7 +59,7 @@
         <!-- Il contenuto della pagina va qui -->
         <section class="section-Modifica">
           <div class="form-box-Modifica">
-            <form action="UpdateUtente" method="post" autocomplete="off">
+            <form action="update" method="post" autocomplete="off">
               <h1>Dati da modificare</h1>
               <div class="input-box">
                 <label><b>Nome</b></label>
@@ -78,14 +78,14 @@
                 <input type="number" name="telefono" value="${modifica.telefono}" required>
               </div>
               <input type="hidden" name="id" value="${modifica.id}">
-              <button type="submit" class="login-button" value="Aggiorna">Aggiorna</button>
+              <button type="submit" class="login-button">Aggiorna</button>
             </form>
           </div>
         </section>
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
     </div>
-    <c:if test="${param.modifica==1}">
+    <c:if test="${param.errore==1}">
       <script>
         alert("I campi del form non possono essere vuoti")
       </script>

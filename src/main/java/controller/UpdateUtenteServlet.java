@@ -11,7 +11,7 @@ import model.UtenteDAO;
 
 import java.io.IOException;
 
-@WebServlet (value = "/UpdateUtente")
+@WebServlet (value = "/update")
 public class UpdateUtenteServlet extends HttpServlet {
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nome = request.getParameter("nome");
@@ -23,16 +23,17 @@ public class UpdateUtenteServlet extends HttpServlet {
         Utente utente = utenteDAO.doRetrieveById(id);
         if(nome.isEmpty() || cognome.isEmpty() || username.isEmpty() || telefono.isEmpty()) {
             request.setAttribute("modifica",utente);
-            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/modificaUtente.jsp?modifica=1");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/modificaUtente.jsp?errore=1");
+            dispatcher.forward(request, response);
+        }else {
+            utente.setNome(nome);
+            utente.setCognome(cognome);
+            utente.setTelefono(telefono);
+            utente.setUsername(username);
+            utenteDAO.doUpdate(utente);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("utenti");
             dispatcher.forward(request, response);
         }
-        utente.setNome(nome);
-        utente.setCognome(cognome);
-        utente.setTelefono(telefono);
-        utente.setUsername(username);
-        utenteDAO.doUpdate(utente);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("utenti");
-        dispatcher.forward(request,response);
     }
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
