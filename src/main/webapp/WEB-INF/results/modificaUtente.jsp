@@ -63,19 +63,19 @@
               <h1>Dati da modificare</h1>
               <div class="input-box">
                 <label><b>Nome</b></label>
-                <input type="text" name="nome" value="${modifica.nome}">
+                <input type="text" name="nome" value="${modifica.nome}" required>
               </div>
               <div class="input-box">
                 <label><b>Cognome</b></label>
-                <input type="text" name="cognome" value="${modifica.cognome}">
+                <input type="text" name="cognome" value="${modifica.cognome}" >
               </div>
               <div class="input-box">
                 <label><b>Username</b></label>
-                <input type="text" name="username" value="${modifica.username}">
+                <input type="text" name="username" value="${modifica.username}" required>
               </div>
               <div class="input-box">
                 <label><b>Telefono</b></label>
-                <input type="number" name="telefono" value="${modifica.telefono}">
+                <input type="number" name="telefono" value="${modifica.telefono}" required>
               </div>
               <input type="hidden" name="id" value="${modifica.id}">
               <button type="submit" class="login-button" value="Aggiorna">Aggiorna</button>
@@ -85,7 +85,11 @@
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
     </div>
-
+    <c:if test="${param.modifica==1}">
+      <script>
+        alert("I campi del form non possono essere vuoti")
+      </script>
+    </c:if>
     <footer class="footer">
       <div class="social">
         <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>

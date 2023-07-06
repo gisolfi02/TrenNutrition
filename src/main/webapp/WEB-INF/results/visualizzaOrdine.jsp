@@ -65,24 +65,30 @@
       <main>
         <!-- Il contenuto della pagina va qui -->
         <%
+          List<Boolean> esisteProdotti = (List<Boolean>) request.getAttribute("esiste");
           Ordine ordine = (Ordine) request.getAttribute("ordine");
-          List<Prodotto> prodotti = (List<Prodotto>) request.getAttribute("prodottiordine");
+          List<Integer> idProdotti = ordine.getIdProdotti();
+          List<String> nomeProdotti = ordine.getNomeProdotti();
+          List<Double> prezziProdotti = ordine.getPrezziProdotti();
           List<Integer> quantita = ordine.getQuantita();
           int i = 0;%>
         <div class="ordine">
           <h1>Riepilogo Ordine N: <%=ordine.getNumeroOrdine()%></h1>
           <div class="prodotti">
             <%
-            for(Prodotto p : prodotti){%>
+            for(Integer id: idProdotti){%>
               <div class="bordo">
-                <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=<%=p.getId()%>" style="text-decoration: none"><img src="img/<%=p.getNome()%><%=p.getId()%>.jpg"></a>
-                <h3><%=p.getNome()%></h3>
-                <div class="info">
-                  <h6><%=p.getPrezzo()%>€</h6>
-                  <h6>Quantità: <%=quantita.get(i)%></h6>
-                </div>
+                <%if(esisteProdotti.get(i)){%>
+                  <a href="http://localhost:8080/Gisolfi_Merola_pj_war_exploded/visualizza?id=<%=id%>" style="text-decoration: none"><img src="img/<%=nomeProdotti.get(i)%><%=id%>.jpg"></a>
+                <%}else{%>
+                  <img src="img/<%=nomeProdotti.get(i)%><%=id%>.jpg">
+                <%}%>
+                  <h3><%=nomeProdotti.get(i)%></h3>
+                  <div class="info">
+                    <h6><%=prezziProdotti.get(i)%>€</h6>
+                    <h6>Quantità: <%=quantita.get(i)%></h6>
+                  </div>
               </div>
-
               <%i++;}
               %>
           </div>

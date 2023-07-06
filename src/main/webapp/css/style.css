@@ -375,7 +375,7 @@ button:hover {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    max-height: 85vh;
+    height: 900px;
     width: 100%;
     background: url("https://hips.hearstapps.com/hmg-prod/images/gettyimages-1281166499.jpg") no-repeat center/cover;
 }
@@ -435,6 +435,9 @@ button:hover {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.form-box-registration p{
+    text-align: center;
+}
 .input-box-registration {
     position: relative;
     margin: 30px 0;
@@ -720,6 +723,12 @@ button:hover {
 }
 .ordine .prodotti .bordo h3,.info{
     padding: 0 7px;
+}
+.ordine .prodotti .bordo h3{
+    font-size: 17px;
+}
+.bordo > img{
+    opacity: 0.5;
 }
 .riepilogo{
     margin: 50px;
@@ -1233,6 +1242,9 @@ button:hover {
         flex-direction: column;
         width: 280px;
     }
+    .form-box-registration p{
+        font-size: 10px;
+    }
     .input-box-registration{
         height: 40px;
         margin: 10px 0;
@@ -1374,6 +1386,7 @@ button:hover {
     /*registrazione responsive*/
     .form-box-registration{
         width: 710px;
+        height: 700px;
     }
     .form-container{
         display: flex;

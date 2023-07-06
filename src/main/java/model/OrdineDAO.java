@@ -26,12 +26,13 @@ public class OrdineDAO {
     public void addProdotto(Prodotto p, int quantita, Ordine o){
         try (Connection con = ConPool.getConnection()) {
             PreparedStatement ps =
-                    con.prepareStatement("INSERT INTO prodottiordine(NumOrdine,idUtente,idProdotto,quantita,prezzoAcquisto) VALUES (?,?,?,?,?)");
+                    con.prepareStatement("INSERT INTO prodottiordine(NumOrdine,idUtente,idProdotto,nomeProdotto,quantita,prezzoAcquisto) VALUES (?,?,?,?,?,?)");
             ps.setInt(1, o.getNumeroOrdine());
             ps.setInt(2, o.getIdUtente());
             ps.setInt(3,p.getId());
-            ps.setInt(4,quantita);
-            ps.setDouble(5,p.getPrezzo());
+            ps.setString(4,p.getNome());
+            ps.setInt(5,quantita);
+            ps.setDouble(6,p.getPrezzo());
             if (ps.executeUpdate() != 1) {
                 throw new RuntimeException("INSERT error.");
             }
@@ -61,18 +62,24 @@ public class OrdineDAO {
 
     public Ordine doRetriveProdottiOrdine(Ordine o){
         try (Connection con = ConPool.getConnection()) {
-            PreparedStatement ps = con.prepareStatement("SELECT idProdotto, quantita FROM prodottiordine WHERE idUtente = ? and NumOrdine=?");
+            PreparedStatement ps = con.prepareStatement("SELECT idProdotto, nomeProdotto,quantita, prezzoAcquisto FROM prodottiordine WHERE idUtente = ? and NumOrdine=?");
             ps.setInt(1, o.getIdUtente());
             ps.setInt(2,o.getNumeroOrdine());
             ResultSet rs = ps.executeQuery();
-            List<Integer> prodotti = new ArrayList<>();
-            List<Integer> quantita = new ArrayList<>();
+            List<Integer> idProdotti = new ArrayList<>();
+            List<Integer> quantitaProdotti = new ArrayList<>();
+            List<String> nomeProdotti = new ArrayList<>();
+            List<Double> prezziProdotti = new ArrayList<>();
             while (rs.next()) {
-                prodotti.add(rs.getInt(1));
-                quantita.add(rs.getInt(2));
+                idProdotti.add(rs.getInt(1));
+                nomeProdotti.add(rs.getString(2));
+                quantitaProdotti.add(rs.getInt(3));
+                prezziProdotti.add(rs.getDouble(4));
             }
-            o.setProdotti(prodotti);
-            o.setQuantita(quantita);
+            o.setIdProdotti(idProdotti);
+            o.setNomeProdotti(nomeProdotti);
+            o.setQuantita(quantitaProdotti);
+            o.setPrezziProdotti(prezziProdotti);
             return o;
         } catch (SQLException e) {
             throw new RuntimeException(e);
