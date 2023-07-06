@@ -64,7 +64,7 @@
                 <li> <p><b>Email : </b> ${utente.email} <b>Username :</b> ${utente.username}</p>
                   <form action="modifica" method="get">
                     <input type="hidden" name="id" value="${utente.id}"/>
-                    <button type="submit" name="submit" value="Modofica">Modifica</button>
+                    <button type="submit" name="submit" value="Modifica">Modifica</button>
                   </form>
                 </li>
               </c:forEach>
