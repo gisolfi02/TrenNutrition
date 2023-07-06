@@ -61,15 +61,15 @@
             <div class="spedizione">
               <div class="informazioni">
                 <label>Via </label>
-                <input type="text" value="${utente.via}" required>
+                <input type="text" name="via" value="${utente.via}" required>
               </div>
               <div class="informazioni">
                 <label>N. Civico </label>
-                <input type="text" value="${utente.ncivico}" required>
+                <input type="text" name="civico" value="${utente.ncivico}" required>
               </div>
               <div class="informazioni">
                 <label>CAP </label>
-                <input type="text" value="${utente.CAP}" required>
+                <input type="text" name="cap" value="${utente.CAP}" required>
               </div>
             </div>
             <h3><i class="far fa-credit-card"></i> Pagamento</h3>
@@ -77,21 +77,21 @@
               <div class="carta">
                 <div class="informazioni">
                   <label>Numero Carta </label>
-                  <input type="text" placeholder="0000 0000 0000 0000" id="card" required>
+                  <input type="text" name="carta" placeholder="0000 0000 0000 0000" id="card" required>
                 </div>
                 <div class="informazioni">
                   <label>CVC </label>
-                  <input type="text" placeholder="123">
+                  <input type="text" name="cvc" placeholder="123" id="cvc" required>
                 </div>
               </div>
               <div class=" carta">
                 <div class="informazioni">
                 <label>Scadenza </label>
-                <input type="text" placeholder="00/00">
+                <input type="text" name="scadenza" placeholder="00/00" id="scadenza" required>
               </div>
                 <div class="informazioni">
                   <label>Nome sulla carta </label>
-                  <input type="text">
+                  <input type="text" name="nome">
                 </div>
               </div>
             </div>
@@ -110,13 +110,49 @@
             let pattern = /(\d{4}[-\s]?){3}\d{4}/
             if(!pattern.test(card)){
               alert("Inserire una carta valida")
+              $("#card").css("border-color","red")
               return false
+            }else {
+              $("#card").css("border-color","green")
+            }
+
+            let cvc = document.getElementById("cvc").value
+            if(cvc.length!=3){
+              alert("CVC invalido")
+              $("#cvc").css("border-color","red")
+              return false
+            }else {
+              $("#cvc").css("border-color","green")
+            }
+
+            let scadenza = document.getElementById("scadenza").value
+            if(!scadenza.includes("/")){
+              alert("Scadenza non valida")
+              $("#scadenza").css("border-color","red")
+              return false
+            }else{
+              let split = scadenza.split("/");
+              let uno = split[0];
+              let due = split[1];
+              if(uno.length!=2 || due.length!=2){
+                alert("Scadenza non valida")
+                $("#scadenza").css("border-color","red")
+                return false
+              }else {
+                $("#scadenza").css("border-color","green")
+              }
             }
             return true
           }
         </script>
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
+      <c:if test="${param.checkout==1}">
+        <script>
+          alert("Il pagamento non \u00E8 andato a buon fine")
+        </script>
+      </c:if>
+
     </div>
 
     <footer class="footer">

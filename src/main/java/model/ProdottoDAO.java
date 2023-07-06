@@ -136,4 +136,16 @@ public class ProdottoDAO{
             throw new RuntimeException(e);
         }
     }
+
+    public boolean esisteProdotto(int id){
+        try (Connection con = ConPool.getConnection()){
+            PreparedStatement ps =
+                    con.prepareStatement("SELECT * FROM prodotto WHERE id=?");
+            ps.setInt(1,id);
+            ResultSet rs = ps.executeQuery();
+            return rs.next();
+        }catch (SQLException e){
+            throw new RuntimeException(e);
+        }
+    }
 }

@@ -80,23 +80,23 @@
               <div class="left-div">
                 <div class="input-box-registration">
                   <label><b>Nome</b></label>
-                  <input type="text" name="nome" value="${utente.nome}">
+                  <input type="text" name="nome" value="${utente.nome}" required>
                 </div>
                 <div class="input-box-registration">
                   <label><b>Cognome</b></label>
-                  <input type="text" name="cognome" value="${utente.cognome}">
+                  <input type="text" name="cognome" value="${utente.cognome}" required>
                 </div>
                 <div class="input-box-registration">
                   <label><b>Username</b></label>
-                  <input type="text" name="username" value="${utente.username}">
+                  <input type="text" name="username" value="${utente.username}" required>
                 </div>
                 <div class="input-box-registration">
                   <label><b>Email</b></label>
-                  <input type="email" name="email" id="email" value="${utente.email}">
+                  <input type="email" name="email" id="email" value="${utente.email}" required>
                 </div>
                 <div class="input-box-registration">
                   <label><b>Telefono</b></label>
-                  <input type="text" name="telefono" value="${utente.telefono}">
+                  <input type="text" name="telefono" value="${utente.telefono}" required>
                 </div>
               </div>
               <div class="right-div">
@@ -116,7 +116,7 @@
                   </div>
                 </fieldset>
               </div>
-              <input type="hidden" name ="id" value="${utente.id}">
+              <input type="hidden" name ="id" value="${utente.id}" required>
               <div class="button-container">
                 <button type="submit">Salva Modifiche</button>
               </div>
@@ -125,8 +125,13 @@
        </section>
       </main>
       <button onclick="scrollToTop()" id="scrollToTop"><i class="fa-solid fa-arrow-up fa-2xl"></i></button>
-    </div>
+      <c:if test="${param.modifica==1}">
+        <script>
+          alert("I campi nome, cognome, username, email e telefono non possono essere vuoti")
+        </script>
+      </c:if>
 
+    </div>
     <footer class="footer">
       <div class="social">
         <a href="https://www.instagram.com"><i class="fa-brands fa-instagram"></i></a>

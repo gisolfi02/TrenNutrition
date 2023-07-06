@@ -68,20 +68,20 @@
             <h3>Nuovo Prodotto</h3>
             <div class="preview">
               <img src="img/noImage.png" id="preview">
-              <input type="file" name="file" onchange="photoPreview()" id="file">
+              <input type="file" name="file" onchange="photoPreview()" id="file" required>
               <label for="file"><i class="fa-regular fa-image"></i> Seleziona un'immagine</label>
             </div>
             <div class="input">
               <label>Nome Prodotto: </label>
-              <input type="text" name="nome">
+              <input type="text" name="nome" required>
             </div>
             <div class="input">
               <label>Descrizione: </label>
-              <textarea cols="40" rows="10" name="descrizione" style="resize: none"></textarea>
+              <textarea cols="40" rows="10" name="descrizione" style="resize: none" required></textarea>
             </div>
             <div class="input">
               <label>Prezzo: </label>
-              <input type="text" name="prezzo">
+              <input type="text" name="prezzo" required>
             </div>
             <div class="input">
             <label>Categoria: </label>

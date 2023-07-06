@@ -22,13 +22,14 @@ public class VisualizzaOrdineServlet extends HttpServlet {
         OrdineDAO ordineDAO = new OrdineDAO();
         Ordine ordine = ordineDAO.doRetriveByNumeroOrdine(numOrdine);
         ordine = ordineDAO.doRetriveProdottiOrdine(ordine);
-        List<Prodotto> prodotti = new ArrayList<>();
+
+        List<Integer> idProdotti = ordine.getIdProdotti();
+        List<Boolean> esisteProdotti = new ArrayList<>();
         ProdottoDAO prodottoDAO = new ProdottoDAO();
-        for(Integer id : ordine.getProdotti()){
-            Prodotto prodotto = prodottoDAO.doRetriveById(id);
-            prodotti.add(prodotto);
+        for (Integer id : idProdotti){
+            esisteProdotti.add(prodottoDAO.esisteProdotto(id));
         }
-        request.setAttribute("prodottiordine",prodotti);
+        request.setAttribute("esiste",esisteProdotti);
         request.setAttribute("ordine",ordine);
         RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/visualizzaOrdine.jsp");
         dispatcher.forward(request,response);

@@ -21,6 +21,11 @@ public class UpdateUtenteServlet extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         UtenteDAO utenteDAO = new UtenteDAO();
         Utente utente = utenteDAO.doRetrieveById(id);
+        if(nome.isEmpty() || cognome.isEmpty() || username.isEmpty() || telefono.isEmpty()) {
+            request.setAttribute("modifica",utente);
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/results/modificaUtente.jsp?modifica=1");
+            dispatcher.forward(request, response);
+        }
         utente.setNome(nome);
         utente.setCognome(cognome);
         utente.setTelefono(telefono);

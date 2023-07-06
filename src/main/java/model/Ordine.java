@@ -6,7 +6,9 @@ public class Ordine {
     private int numeroOrdine;
     private Double totale;
     private int idUtente;
-    private List<Integer> prodotti;
+    private List<Integer> idProdotti;
+    private List<String> nomeProdotti;
+    private List<Double> prezziProdotti;
     private List<Integer> quantita;
 
     public int getNumeroOrdine() {
@@ -33,12 +35,28 @@ public class Ordine {
         this.idUtente = idUtente;
     }
 
-    public List<Integer> getProdotti() {
-        return prodotti;
+    public List<Integer> getIdProdotti() {
+        return idProdotti;
     }
 
-    public void setProdotti(List<Integer> prodotti) {
-        this.prodotti = prodotti;
+    public void setIdProdotti(List<Integer> idProdotti) {
+        this.idProdotti = idProdotti;
+    }
+
+    public List<String> getNomeProdotti() {
+        return nomeProdotti;
+    }
+
+    public void setNomeProdotti(List<String> nomeProdotti) {
+        this.nomeProdotti = nomeProdotti;
+    }
+
+    public List<Double> getPrezziProdotti() {
+        return prezziProdotti;
+    }
+
+    public void setPrezziProdotti(List<Double> prezziProdotti) {
+        this.prezziProdotti = prezziProdotti;
     }
 
     public List<Integer> getQuantita() {
