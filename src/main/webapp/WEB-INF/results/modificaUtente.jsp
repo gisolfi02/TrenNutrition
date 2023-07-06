@@ -67,7 +67,7 @@
               </div>
               <div class="input-box">
                 <label><b>Cognome</b></label>
-                <input type="text" name="cognome" value="${modifica.cognome}" >
+                <input type="text" name="cognome" value="${modifica.cognome}" required>
               </div>
               <div class="input-box">
                 <label><b>Username</b></label>
