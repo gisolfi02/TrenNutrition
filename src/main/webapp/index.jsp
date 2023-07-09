@@ -27,16 +27,16 @@
 
                         function showNextBanner() {
                             // Nascondi il banner corrente
-                            banners[currentIndex].classList.remove("active");
+                            $(banners[currentIndex]).hide()
 
                             currentIndex = (currentIndex + 1) % banners.length;
 
                             // Mostra il prossimo banner
-                            banners[currentIndex].classList.add("active");
+                            $(banners[currentIndex]).fadeIn(1000)
                         }
 
                         // Mostra il primo banner
-                        banners[currentIndex].classList.add("active");
+                        $(banners[currentIndex]).show()
 
                         // Mostra i banner in sequenza
                         setInterval(showNextBanner, interval);

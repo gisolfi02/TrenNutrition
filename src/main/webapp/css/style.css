@@ -161,9 +161,6 @@ li.icon{
     overflow: hidden; /* Nasconde il contenuto extra dell'immagine che supera l'altezza specificata */
 }
 
-.banner.active {
-    display: block;
-}
 
 
 .banner-image {
