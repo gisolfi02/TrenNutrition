@@ -41,7 +41,7 @@ Una volta clonata la repository, modificare nella classe "ConPool" il collegamen
 ```bash
 src/main/java/model/ConPool.java
 ```
-Successivamente, aprire SQLWorkbench e creare il database copiando il file "Database.sql" presente nella repository. Una volta eseguiti tutti i passi sopra riportati lanciare l'applicazione.
+Successivamente, aprire SQLWorkbench e creare il database copiando il file "DataBase.sql" presente nella repository. Una volta eseguiti tutti i passi sopra riportati lanciare l'applicazione.
 ## Link Utili
 Di seguito riportiamo il link per l'installazione e la configurazione di MySQL e MySQL Workbench e per Apache Tomcat: 
 - [Ultimate MySQL Workbench Installation Guide ](https://www.simplilearn.com/tutorials/mysql-tutorial/mysql-workbench-installation)
