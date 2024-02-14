@@ -23,3 +23,26 @@ Inoltre, TrenNutrition prevede anche la figura dell'amministratore, il quale pu�
 - Rimuovere un prodotto
 - Visualizzare la lista di utenti iscritti alla piattaforma
 - Modificare eventualmente i dati degli utenti
+
+# Come Iniziare
+## Requisiti
+I requisiti necessari all'avvio dell'applicazione sono:
+- IDE (consigliamo [Intellij IDEA Ultimate Edition](https://www.jetbrains.com/idea/))
+- MySQL Workbench
+- MySQL
+- Tomcat
+
+## Configuarzione
+Per poter utilizzare l'applicazione MediCare, il primo passo da eseguire è quello di clonare la repository sul proprio IDE, con il comando:
+```bash
+git clone https://github.com/gisolfi02/TrenNutrition.git
+```
+Una volta clonata la repository, modificare nella classe "ConPool" il collegamento al database, inserendo come password la propria password di SQL. Il percorso per arrivare alla classe specficata è:
+```bash
+src/main/java/model/ConPool.java
+```
+Successivamente, aprire SQLWorkbench e creare il database copiando il file "Database.sql" presente nella repository. Una volta eseguiti tutti i passi sopra riportati lanciare l'applicazione.
+## Link Utili
+Di seguito riportiamo il link per l'installazione e la configurazione di MySQL e MySQL Workbench e per Apache Tomcat: 
+- [Ultimate MySQL Workbench Installation Guide ](https://www.simplilearn.com/tutorials/mysql-tutorial/mysql-workbench-installation)
+- [How to Install Apache Tomcat on Windows](https://phoenixnap.com/kb/install-tomcat-windows)
