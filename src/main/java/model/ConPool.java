@@ -16,7 +16,7 @@ public class ConPool {
             p.setUrl("jdbc:mysql://localhost:3306/db?serverTimezone=" + TimeZone.getDefault().getID());
             p.setDriverClassName("com.mysql.cj.jdbc.Driver");
             p.setUsername("root");
-            p.setPassword("Interista05.");
+            p.setPassword("Inserire qui la password");
             p.setMaxActive(100);
             p.setInitialSize(10);
             p.setMinIdle(10);
