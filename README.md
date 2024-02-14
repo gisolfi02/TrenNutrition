@@ -1,5 +1,25 @@
+<p align="center">
+  <img src="https://github.com/gisolfi02/TrenNutrition/assets/114088374/1c3129de-5c3f-45db-9346-ec007004e4ed" style="width:300px">
+</p>
+
 # TrenNutrition
+Repository contenente il progetto realizzato durante il corso di "Tecnologie Software per il WEB" tenuto dal Prof. Gennaro Costagliola presso l'Università degli studi di Salerno.
+## Chi siamo
+- [@astappetto02](https://github.com/Astappetto02)
+- [@gisolfi02](https://github.com/gisolfi02)
 
-TrenNutrition è un e-commerce di integratori sportivi realizzato come progetto finale del corso Tecnologie Software per il Web dell'univeristà di Salerno. 
+# Cos'è TrenNutrition
+Tren Nutrition è un ecommerce specializzato nella vendita di integratori per la palestra. Offre una vasta gamma di prodotti mirati a soddisfare le esigenze degli appassionati di fitness, culturismo e sportivi professionisti. La piattaforma offre un'esperienza di shopping online intuitiva e user-friendly, consentendo ai clienti di esplorare facilmente il catalogo di integratori e trovare i prodotti più adatti alle loro esigenze specifiche. Tren Nutrition si impegna a garantire la qualità e l'efficacia dei suoi prodotti, collaborando con marchi affidabili e rispettati nel settore degli integratori per la palestra. Nel complesso, Tren Nutrition si propone di essere il punto di riferimento per gli appassionati di fitness e sportivi che cercano integratori di alta qualità per raggiungere i propri obiettivi di allenamento e migliorare le proprie performance fisiche.
 
-Il progetto è stato realizzato da Andrea Gisolfi e Antonio Merola
+## Contenuto dell'applicazione
+Oltre alla classiche funzionalià di accesso e registrazione da parte di un utente, TrenNutrition offre:
+- La ricerca dei prodotti tramite categoria o nome
+- La possibilità di aggiungere al carrello un prodotto
+- Effettuare l'acquisto dei prodotti nel carrello
+- La possibilità di visualizzare lo storico degli ordini, inclusa la possibilià di visualizzare i prodotti di ogni ordine
+
+Inoltre, TrenNutrition prevede anche la figura dell'amministratore, il quale può:
+- Aggiungere un prodotto
+- Rimuovere un prodotto
+- Visualizzare la lista di utenti iscritti alla piattaforma
+- Modificare eventualmente i dati degli utenti
