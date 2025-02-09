@@ -1,78 +1,79 @@
+# **TrenNutrition** 
 <p align="center">
   <img src="https://github.com/gisolfi02/TrenNutrition/assets/114088374/1c3129de-5c3f-45db-9346-ec007004e4ed" alt="TrenNutrition Logo" style="width:300px">
 </p>
 
-# **TrenNutrition**  
-Repository contenente il progetto realizzato durante il corso di **Tecnologie Software per il WEB** tenuto dal **Prof. Gennaro Costagliola** presso l'Università degli Studi di Salerno.
+ 
+Repository containing the project developed during the **Web Software Technologies** course taught by **Prof. Gennaro Costagliola** at the University of Salerno.
 
 ---
 
-## 👥 **Chi siamo**
+## 👥 **Who We Are**
 - [@astappetto02](https://github.com/astappetto02)  
 - [@gisolfi02](https://github.com/gisolfi02)  
 
 ---
 
-## 🛒 **Cos'è TrenNutrition?**
-**TrenNutrition** è un e-commerce specializzato nella vendita di integratori per appassionati di fitness, culturismo e sportivi professionisti.  
-Offre:  
-- Un'ampia gamma di prodotti di alta qualità.  
-- Un'esperienza utente intuitiva per esplorare e acquistare integratori.  
-- Collaborazione con marchi affidabili nel settore, garantendo la massima qualità e efficacia.  
+## 🛒 **What is TrenNutrition?**
+**TrenNutrition** is an e-commerce platform specialized in selling supplements for fitness enthusiasts, bodybuilders, and professional athletes.  
+It offers:  
+- A wide range of high-quality products.  
+- An intuitive user experience to explore and purchase supplements.  
+- Collaboration with reliable brands in the industry, ensuring maximum quality and effectiveness.  
 
-L'obiettivo principale di TrenNutrition è essere il punto di riferimento per chi desidera migliorare le proprie performance fisiche e raggiungere i propri obiettivi di allenamento.  
-
----
-
-## 📋 **Contenuto dell'applicazione**
-TrenNutrition fornisce funzionalità per:  
-### **Utenti Registrati:**  
-- **Ricerca prodotti** tramite categorie o nome.  
-- **Aggiunta prodotti al carrello.**  
-- **Acquisto prodotti** presenti nel carrello.  
-- **Visualizzazione storico ordini,** con dettagli su ogni ordine effettuato.  
-
-### **Amministratori:**  
-- **Aggiunta di nuovi prodotti.**  
-- **Rimozione di prodotti esistenti.**  
-- **Gestione utenti registrati:**  
-  - Visualizzazione della lista utenti.  
-  - Modifica dei dati degli utenti.  
+TrenNutrition's main goal is to be the reference point for those looking to improve their physical performance and achieve their training goals.  
 
 ---
 
-## 🚀 **Come iniziare**
-### **Requisiti**
-Per utilizzare TrenNutrition, è necessario installare i seguenti strumenti:  
-- [IntelliJ IDEA Ultimate Edition](https://www.jetbrains.com/idea/) (o un IDE equivalente).  
+## 🗉 **Application Features**
+TrenNutrition provides functionalities for:  
+### **Registered Users:**  
+- **Search for products** by category or name.  
+- **Add products to the cart.**  
+- **Purchase products** in the cart.  
+- **View order history,** with details on each order placed.  
+
+### **Administrators:**  
+- **Add new products.**  
+- **Remove existing products.**  
+- **Manage registered users:**  
+  - View the user list.  
+  - Edit user data.  
+
+---
+
+## 🚀 **Getting Started**
+### **Requirements**
+To use TrenNutrition, you need to install the following tools:  
+- [IntelliJ IDEA Ultimate Edition](https://www.jetbrains.com/idea/) (or an equivalent IDE).  
 - MySQL Workbench.  
 - MySQL Server.  
 - Apache Tomcat.  
 
-### **Configurazione**
-1. **Clona la repository** sul tuo IDE:  
+### **Setup**
+1. **Clone the repository** into your IDE:  
    ```bash
    git clone https://github.com/gisolfi02/TrenNutrition.git
    ```
-2. **Configura il database**:
-    - Apri il file ConPool.java nel percorso
+2. **Configure the database**:
+    - Open the `ConPool.java` file located at:
     ```bash
     src/main/java/model/ConPool.java
     ```
-    - Inserisci la tua password MySQL nel campo della password.
+    - Enter your MySQL password in the password field.
     ```bash
-    // Configurazione esempio in ConPool.java
-    private static final String PASSWORD = "laTuaPasswordSQL";
+    // Example configuration in ConPool.java
+    private static final String PASSWORD = "yourSQLPassword";
     ```
 
-3. **Crea il database**:
-    - Apri MySQL Workbench e connettiti al tuo server MySQL.
-    - Importa ed esegui il file Database.sql presente nella repository per creare le tabelle necessarie.
+3. **Create the database**:
+    - Open MySQL Workbench and connect to your MySQL server.
+    - Import and execute the `Database.sql` file from the repository to create the necessary tables.
 
-4. **Esegui l'applicazione**:
-    - Configura Apache Tomcat nel tuo IDE.
-    - Avvia il server Tomcat e lancia il progetto dal tuo IDE per eseguire TrenNutrition.
+4. **Run the application**:
+    - Configure Apache Tomcat in your IDE.
+    - Start the Tomcat server and run the project from your IDE to launch TrenNutrition.
 
-## 🔗 Link utili
-- [Guida completa all'installazione di MySQL Workbench](https://www.simplilearn.com/tutorials/mysql-tutorial/mysql-workbench-installation)
-- [Guida all'installazione di Apache Tomcat su Windows](https://phoenixnap.com/kb/install-tomcat-windows)
+## 🔗 Useful Links
+- [Complete Guide to Installing MySQL Workbench](https://www.simplilearn.com/tutorials/mysql-tutorial/mysql-workbench-installation)  
+- [Guide to Installing Apache Tomcat on Windows](https://phoenixnap.com/kb/install-tomcat-windows)
